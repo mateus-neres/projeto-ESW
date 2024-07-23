@@ -19,7 +19,7 @@ Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Uni
 
 ## Estrutura do Projeto
 
-```plaintext
+
 ├── pasta/
 │   ├── modulo.py - Código principal do projeto
 │   ├── biblioteca.py - Arquivo contendo funções utilizadas no projeto.
