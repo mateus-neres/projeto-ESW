@@ -20,14 +20,25 @@ Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Uni
 ## Estrutura do Projeto
 
 PROJETO-ESW
+
 ├── pasta/
+
 │   ├── modulo.py - Código principal do projeto
+
 │   ├── biblioteca.py - Arquivo contendo funções utilizadas no projeto.
+
 ├── data/
+
 │   ├── extratos/Extratos bancários para análise.
+
 │   ├── relatorios/Relatórios gerados a partir dos extratos.
+
 │   ├── dashboards/Dashboards criados para visualização.
+
 ├── arquivos/
+
 │   ├── analise_extratos.py - 
+
 │   ├── geracao_relatorios.py - 
+
 │   ├── criacao_dashboards.py - criação de dashboards.
