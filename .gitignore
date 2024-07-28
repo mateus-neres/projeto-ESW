@@ -21,7 +21,10 @@ Thumbs.db
 .vscode/
 
 # Ignore arquivos de texto
-.txt
+*.txt
 
 # Ignore arquivos xlsx
-.xlsx
+*.xls
+*.xlsx
+*.xlsm
+*.xlsb
