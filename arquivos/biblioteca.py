@@ -4,22 +4,18 @@ import os
 import tabula
 import PyPDF2
 
-logger.basicConfig(level=logger.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S', filename='meu_log.txt', filemode='w')
-
 # Recebe o direotiro e o nome do aquivo.pdf e retorna uma tabela
-
 def pdf_para_tabela(diretorio_pdf, nome_pdf):
-    logger.info('Convertendo PDF para tabela. Função pdf_para_tabela')   
+    logger.info('Convertendo PDF para tabela. Função pdf_para_tabela')
     diretorio = diretorio_pdf
     nome = nome_pdf 
     diretorio_nome = os.path.join(diretorio, nome)
     
     try:
-        extrair_tabela_do_pdf = tabula.read_pdf(diretorio_nome, pages='all', stream=True, multiple_tables=True,encoding='ISO-8859-1')
-
-        logger.warning('Nenhuma tabela extraida do PDF')
-        if extrair_tabela_do_pdf is None:
-            
+        extrair_tabela_do_pdf = tabula.read_pdf(diretorio_nome, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
+        
+        if not extrair_tabela_do_pdf:  # Corrigido para verificar se a lista está vazia
+            logger.warning('Nenhuma tabela extraída do PDF')
             return None
         
         logger.info('Conversão do PDF para tabela concluída com sucesso')
@@ -28,16 +24,15 @@ def pdf_para_tabela(diretorio_pdf, nome_pdf):
     except Exception as e:
         logger.error(f'Erro ao inicializar a conversão de PDF para tabela. Função pdf_para_tabela: {e}')
         return None
-    
+
 
 
 # Recebe a tabela de dados, diretorio para salvar o arquivo xlsx, e o nome do arquivo, e cria um arquivo xlsx com as variaveis recebidas
 def tabela_para_excel(tabela, diretorio_para_salvar_excel, nome_arquivo_para_salvar):
     logger.info('Convertendo tabela para arquivo xlsx. Função tabela_para_excel')
     try:
-
-        logger.warning('Nenhuma tabela foi fornecida')
         if tabela is None:
+            logger.warning('Nenhuma tabela foi fornecida')
             return None
 
         diretorio_nome = os.path.join(diretorio_para_salvar_excel, nome_arquivo_para_salvar)
@@ -76,13 +71,3 @@ def ler_pdf(diretorio_pdf, nome_pdf):
         return texto
     except Exception as e:
         logger.error(f'Error ao chamar a função ler_pdf: {e}')
-
-
-# testando funções
-
-try:
-    tabela = pdf_para_tabela(r'C:\Users\mateu\Área de Trabalho\AMBIENTE DE TRABALHO\ESTUDOS\UFPB\P4\ENGENHARIA DE SOFTWARE\projeto-ESW\data', 'extrato.pdf')
-    if tabela is not None:
-        tabela_para_excel(tabela, r'C:\Users\mateu\Área de Trabalho\AMBIENTE DE TRABALHO\ESTUDOS\UFPB\P4\ENGENHARIA DE SOFTWARE\projeto-ESW\data', 'extrato.xlsx')
-except Exception as e:
-    logger.error(f'Erro ao executar o código principal: {e}')
