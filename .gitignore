@@ -1,30 +1,30 @@
-# Ignore bytecode files
-*.py[cod]
-__pycache__/
-
-# Ignore environment folders
-venv/
-env/
-
-# Ignore system-specific files
-.DS_Store
-Thumbs.db
-
-# Ignore log files and databases
-*.log
-*.sqlite3
-
-# Ignore Jupyter Notebook checkpoints
+# Ignorar arquivos de checkpoint do Jupyter
 .ipynb_checkpoints/
 
-# Ignore VS Code settings
-.vscode/
-
-# Ignore arquivos de texto
+# Ignorar arquivos de texto
 *.txt
 
-# Ignore arquivos xlsx
+# Ignorar arquivos Excel
 *.xls
 *.xlsx
 *.xlsm
 *.xlsb
+
+# Ignorar arquivos de bytecode Python
+*.py[cod]
+__pycache__/
+
+# Ignorar ambientes virtuais
+venv/
+env/
+
+# Ignorar arquivos de sistema específicos
+.DS_Store
+Thumbs.db
+
+# Ignorar logs e bancos de dados
+*.log
+*.sqlite3
+
+# Ignorar configurações do VS Code
+.vscode/
