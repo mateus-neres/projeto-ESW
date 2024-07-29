@@ -56,14 +56,14 @@ def tabela_para_excel(tabela, diretorio_para_salvar_excel, nome_arquivo_para_sal
     except Exception as e:
         logger.error(f'Erro inicializar a conversão da tabela para xlsx. Função tabela_para_excel: {e}')
 
-# Recebe caminho e nome do arquivo em pdf e retorna o texto do pdf recebi
+# Recebe caminho e nome do arquivo em pdf e retorna o texto do pdf recebido
 def ler_pdf(diretorio_pdf, nome_pdf):
     logger.info('Chamanda da função ler_pdf')
     try:
         diretorio = diretorio_pdf
         nome = nome_pdf
         diretorio_nome = os.path.join(diretorio, nome)
-        with open(diretorio_nome, 'rb') as pdf_lido:
+        with open(diretorio_nome, 'rb', encoding='utf8') as pdf_lido:
             leitor_pdf = PyPDF2.PdfReader(pdf_lido)
             texto = ''
             for pagina in range(len(leitor_pdf.pages)):
@@ -71,3 +71,14 @@ def ler_pdf(diretorio_pdf, nome_pdf):
         return texto
     except Exception as e:
         logger.error(f'Error ao chamar a função ler_pdf: {e}')
+
+
+def criar_txt(texto, nome_arquivo):
+    logger.info('Chamando a função texto_para_txt')
+    try:
+        with open(nome_arquivo, 'w', encoding='utf-8') as arquivo:
+            arquivo.write(texto)
+        logger.info(f"O texto foi escrito com sucesso no arquivo {nome_arquivo}.")
+    except Exception as e:
+        logger.error(f"Ocorreu um erro ao escrever no arquivo: {e}")
+
