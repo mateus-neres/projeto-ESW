@@ -1,5 +1,5 @@
 # Ignorar arquivos de checkpoint do Jupyter
-.ipynb_checkpoints/
+*.ipynb_checkpoints/
 
 # Ignorar arquivos de texto
 *.txt
