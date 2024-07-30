@@ -13,21 +13,24 @@ Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Uni
 
 ## Tecnologias Utilizadas
 
-- **Linguagem de Programação**: Python
-- **Bibliotecas**: Pandas, Matplotlib, Seaborn, Plotly, Dash
-- **Outros**: Jupyter Notebook
+- **Linguagem de Programação**: Python, Jupyter Notebook
+- **Bibliotecas**: Pandas, Matplotlib, Seaborn, Plotly, Dash, loguru, openpyxl, os, tabula, PyPDF2
 
 ## Estrutura do Projeto
 
 PROJETO-ESW
+
 ├── pasta/
+
 │   ├── modulo.py - Código principal do projeto
+
 │   ├── biblioteca.py - Arquivo contendo funções utilizadas no projeto.
+
 ├── data/
+
 │   ├── extratos/Extratos bancários para análise.
+
 │   ├── relatorios/Relatórios gerados a partir dos extratos.
+
 │   ├── dashboards/Dashboards criados para visualização.
-├── arquivos/
-│   ├── analise_extratos.py - 
-│   ├── geracao_relatorios.py - 
-│   ├── criacao_dashboards.py - criação de dashboards.
+
