@@ -4,81 +4,82 @@ import os
 import tabula
 import PyPDF2
 
-# Recebe o direotiro e o nome do aquivo.pdf e retorna uma tabela
-def pdf_para_tabela(diretorio_pdf, nome_pdf):
-    logger.info('Convertendo PDF para tabela. Função pdf_para_tabela')
-    diretorio = diretorio_pdf
-    nome = nome_pdf 
-    diretorio_nome = os.path.join(diretorio, nome)
+# Recebe o diretório e o nome do arquivo PDF e retorna uma tabela
+def pdf_para_tabela(caminho_pdf, nome_pdf):
+    logger.info('Iniciando a conversão do PDF para tabela.')
+    caminho_completo = os.path.join(caminho_pdf, nome_pdf)
     
     try:
-        extrair_tabela_do_pdf = tabula.read_pdf(diretorio_nome, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
+        tabelas_extraidas = tabula.read_pdf(caminho_completo, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
         
-        if not extrair_tabela_do_pdf:  # Corrigido para verificar se a lista está vazia
-            logger.warning('Nenhuma tabela extraída do PDF')
+        if not tabelas_extraidas:
+            logger.warning('Nenhuma tabela foi extraída do PDF.')
             return None
         
-        logger.info('Conversão do PDF para tabela concluída com sucesso')
-        return extrair_tabela_do_pdf
+        logger.info('Conversão do PDF para tabela concluída com sucesso.')
+        return tabelas_extraidas
 
     except Exception as e:
-        logger.error(f'Erro ao inicializar a conversão de PDF para tabela. Função pdf_para_tabela: {e}')
+        logger.error(f'Erro ao converter PDF para tabela: {e}')
         return None
 
 
-
-# Recebe a tabela de dados, diretorio para salvar o arquivo xlsx, e o nome do arquivo, e cria um arquivo xlsx com as variaveis recebidas
-def tabela_para_excel(tabela, diretorio_para_salvar_excel, nome_arquivo_para_salvar):
-    logger.info('Convertendo tabela para arquivo xlsx. Função tabela_para_excel')
+# Recebe a tabela de dados, o diretório para salvar o arquivo Excel e o nome do arquivo, e cria um arquivo Excel
+def tabela_para_excel(tabelas, caminho_para_salvar_excel, nome_arquivo_excel):
+    logger.info('Iniciando a conversão da tabela para arquivo Excel.')
+    caminho_completo = os.path.join(caminho_para_salvar_excel, nome_arquivo_excel)
     try:
-        if tabela is None:
-            logger.warning('Nenhuma tabela foi fornecida')
+        if not tabelas:
+            logger.warning('Nenhuma tabela foi fornecida.')
             return None
-
-        diretorio_nome = os.path.join(diretorio_para_salvar_excel, nome_arquivo_para_salvar)
         
+    
         pasta_de_trabalho = Workbook()
-        planilha_de_trabalho = pasta_de_trabalho.active
+        planilha_ativa = pasta_de_trabalho.active
         
-        for bloco_de_dados in tabela:
-            linhas = bloco_de_dados.values.tolist()
+        for tabela in tabelas:
+            linhas = tabela.values.tolist()
 
-            for  linha in linhas:
-                if linha is not None:
-                    planilha_de_trabalho.append(linha)
+            for linha in linhas:
+                if linha:
+                    planilha_ativa.append(linha)
                 else:
-                    logger.error('O valor da linha é vazio')
+                    logger.warning('Linha vazia encontrada e ignorada.')
 
-        pasta_de_trabalho.save(diretorio_nome)
-        logger.info('Conversão de tabela para xlsx realizada com sucesso')
-        logger.info(f'Arquivo xlsx salvo com sucesso em : {diretorio_nome}')
+        pasta_de_trabalho.save(caminho_completo)
+        logger.info(f'Arquivo Excel salvo com sucesso em: {caminho_completo}')
 
     except Exception as e:
-        logger.error(f'Erro inicializar a conversão da tabela para xlsx. Função tabela_para_excel: {e}')
+        logger.error(f'Erro ao salvar a tabela como Excel: {e}')
 
-# Recebe caminho e nome do arquivo em pdf e retorna o texto do pdf recebido
-def ler_pdf(diretorio_pdf, nome_pdf):
-    logger.info('Chamanda da função ler_pdf')
+
+# Recebe o caminho e nome do arquivo PDF e retorna o texto do PDF
+def ler_pdf(caminho_pdf, nome_pdf):
+    logger.info('Iniciando a leitura do PDF.')
+    caminho_completo = os.path.join(caminho_pdf, nome_pdf)
     try:
-        diretorio = diretorio_pdf
-        nome = nome_pdf
-        diretorio_nome = os.path.join(diretorio, nome)
-        with open(diretorio_nome, 'rb', encoding='utf8') as pdf_lido:
-            leitor_pdf = PyPDF2.PdfReader(pdf_lido)
+        with open(caminho_completo, 'rb') as arquivo_pdf:
+            leitor_pdf = PyPDF2.PdfReader(arquivo_pdf)
             texto = ''
+            
             for pagina in range(len(leitor_pdf.pages)):
                 texto += leitor_pdf.pages[pagina].extract_text()
+        
+        logger.info('Leitura do PDF concluída com sucesso.')
         return texto
+
     except Exception as e:
-        logger.error(f'Error ao chamar a função ler_pdf: {e}')
+        logger.error(f'Erro ao ler o PDF: {e}')
+        return None
 
 
-def criar_txt(texto, nome_arquivo):
-    logger.info('Chamando a função texto_para_txt')
+# Cria um arquivo de texto a partir do texto fornecido
+def criar_txt(texto, nome_arquivo_txt):
+    logger.info('Iniciando a criação do arquivo de texto.')
     try:
-        with open(nome_arquivo, 'w', encoding='utf-8') as arquivo:
+        with open(nome_arquivo_txt, 'w', encoding='utf-8') as arquivo:
             arquivo.write(texto)
-        logger.info(f"O texto foi escrito com sucesso no arquivo {nome_arquivo}.")
-    except Exception as e:
-        logger.error(f"Ocorreu um erro ao escrever no arquivo: {e}")
+        logger.info(f'Texto escrito com sucesso no arquivo: {nome_arquivo_txt}')
 
+    except Exception as e:
+        logger.error(f'Erro ao criar o arquivo de texto: {e}')
