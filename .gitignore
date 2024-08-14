@@ -28,3 +28,17 @@ Thumbs.db
 
 # Ignorar configurações do VS Code
 .vscode/
+
+# Ignorar arquivos gerados pelo PyInstaller
+*.spec
+dist/
+build/
+__pycache__/
+*.toc
+*.pkg
+*.pyz
+*.html
+
+# idnorando arquivos compactados
+*.zip
+*.rar
