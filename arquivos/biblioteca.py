@@ -3,71 +3,109 @@ from openpyxl import Workbook
 import os
 import tabula
 import PyPDF2
+import pandas as pd
 
-# Recebe o direotiro e o nome do aquivo.pdf e retorna uma tabela
+# Recebe o diretório e o nome do arquivo PDF e retorna uma lista de tabelas extraídas
 def pdf_para_tabela(diretorio_pdf, nome_pdf):
-    logger.info('Convertendo PDF para tabela. Função pdf_para_tabela')
-    diretorio = diretorio_pdf
-    nome = nome_pdf 
-    diretorio_nome = os.path.join(diretorio, nome)
+    logger.info('Iniciando a conversão do PDF para tabelas.')
+    caminho_pdf = os.path.join(diretorio_pdf, nome_pdf)
     
     try:
-        extrair_tabela_do_pdf = tabula.read_pdf(diretorio_nome, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
+        tabelas = tabula.read_pdf(caminho_pdf, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
         
-        if not extrair_tabela_do_pdf:  # Corrigido para verificar se a lista está vazia
-            logger.warning('Nenhuma tabela extraída do PDF')
+        if not tabelas:
+            logger.warning('Nenhuma tabela foi extraída do PDF.')
             return None
         
-        logger.info('Conversão do PDF para tabela concluída com sucesso')
-        return extrair_tabela_do_pdf
+        logger.info('Conversão do PDF para tabelas concluída com sucesso.')
+        return tabelas
 
     except Exception as e:
-        logger.error(f'Erro ao inicializar a conversão de PDF para tabela. Função pdf_para_tabela: {e}')
+        logger.error(f'Erro ao converter PDF para tabelas: {e}')
         return None
 
 
-
-# Recebe a tabela de dados, diretorio para salvar o arquivo xlsx, e o nome do arquivo, e cria um arquivo xlsx com as variaveis recebidas
-def tabela_para_excel(tabela, diretorio_para_salvar_excel, nome_arquivo_para_salvar):
-    logger.info('Convertendo tabela para arquivo xlsx. Função tabela_para_excel')
+# Recebe uma lista de tabelas, o diretório para salvar o arquivo Excel e o nome do arquivo, e cria um arquivo Excel
+def tabela_para_excel(tabelas, diretorio_excel, nome_arquivo_excel):
+    logger.info('Iniciando a conversão das tabelas para arquivo Excel.')
+    caminho_excel = os.path.join(diretorio_excel, nome_arquivo_excel)
     try:
-        if tabela is None:
-            logger.warning('Nenhuma tabela foi fornecida')
+        if not tabelas:
+            logger.warning('Nenhuma tabela foi fornecida.')
             return None
-
-        diretorio_nome = os.path.join(diretorio_para_salvar_excel, nome_arquivo_para_salvar)
         
-        pasta_de_trabalho = Workbook()
-        planilha_de_trabalho = pasta_de_trabalho.active
+        workbook = Workbook()
+        sheet = workbook.active
         
-        for bloco_de_dados in tabela:
-            linhas = bloco_de_dados.values.tolist()
+        for tabela in tabelas:
+            linhas = tabela.values.tolist()
 
-            for  linha in linhas:
-                if linha is not None:
-                    planilha_de_trabalho.append(linha)
+            for linha in linhas:
+                if linha:
+                    sheet.append(linha)
                 else:
-                    logger.error('O valor da linha é vazio')
+                    logger.warning('Linha vazia encontrada e ignorada.')
 
-        pasta_de_trabalho.save(diretorio_nome)
-        logger.info('Conversão de tabela para xlsx realizada com sucesso')
-        logger.info(f'Arquivo xlsx salvo com sucesso em : {diretorio_nome}')
+        workbook.save(caminho_excel)
+        logger.info(f'Arquivo Excel salvo com sucesso em: {caminho_excel}')
 
     except Exception as e:
-        logger.error(f'Erro inicializar a conversão da tabela para xlsx. Função tabela_para_excel: {e}')
+        logger.error(f'Erro ao salvar a tabela como Excel: {e}')
 
-# Recebe caminho e nome do arquivo em pdf e retorna o texto do pdf recebi
+
+# Recebe o caminho e o nome do arquivo PDF e retorna o texto extraído do PDF
 def ler_pdf(diretorio_pdf, nome_pdf):
-    logger.info('Chamanda da função ler_pdf')
+    logger.info('Iniciando a leitura do PDF.')
+    caminho_pdf = os.path.join(diretorio_pdf, nome_pdf)
     try:
-        diretorio = diretorio_pdf
-        nome = nome_pdf
-        diretorio_nome = os.path.join(diretorio, nome)
-        with open(diretorio_nome, 'rb') as pdf_lido:
-            leitor_pdf = PyPDF2.PdfReader(pdf_lido)
+        with open(caminho_pdf, 'rb') as arquivo_pdf:
+            leitor_pdf = PyPDF2.PdfReader(arquivo_pdf)
             texto = ''
+            
             for pagina in range(len(leitor_pdf.pages)):
                 texto += leitor_pdf.pages[pagina].extract_text()
+        
+        logger.info('Leitura do PDF concluída com sucesso.')
         return texto
+
     except Exception as e:
-        logger.error(f'Error ao chamar a função ler_pdf: {e}')
+        logger.error(f'Erro ao ler o PDF: {e}')
+        return None
+
+
+# Cria um arquivo de texto a partir do conteúdo fornecido
+def criar_txt(conteudo, nome_arquivo_txt):
+    logger.info('Iniciando a criação do arquivo de texto.')
+    try:
+        with open(nome_arquivo_txt, 'w', encoding='utf-8') as arquivo_txt:
+            arquivo_txt.write(conteudo)
+        logger.info(f'Conteúdo escrito com sucesso no arquivo: {nome_arquivo_txt}')
+
+    except Exception as e:
+        logger.error(f'Erro ao criar o arquivo de texto: {e}')
+
+# Ajusta o valor de acordo com o formato esperado
+def ajustar_valor(valor):
+    if pd.isna(valor):
+        logger.info('Valor é NaN, retornando None.')
+        return None
+    
+    valor_str = str(valor).strip()
+    
+    valor_str = valor_str.replace('.', '').replace(' ', '')
+    
+    if valor_str.endswith('D') or valor_str.endswith('C'):
+        sufixo = valor_str[-1]
+        valor_str = valor_str[:-1]
+    else:
+        sufixo = ''
+    
+    try:
+        valor_ajustado = float(valor_str.replace(',', '.'))
+        if sufixo == 'D':
+            valor_ajustado = -valor_ajustado
+        logger.info(f'Valor ajustado: {valor_ajustado}')
+        return valor_ajustado
+    except ValueError:
+        logger.error(f'Valor inválido para conversão: {valor_str}')
+        return None
