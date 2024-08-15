@@ -33,6 +33,16 @@ PROJETO-ESW
 │   ├── relatorios/Relatórios gerados a partir dos extratos.
 
 │   ├── dashboards/Dashboards criados para visualização.
+<<<<<<< HEAD
+
+├── arquivos/
+
+│   ├── analise_extratos.py - 
+
+│   ├── geracao_relatorios.py - 
+
+│   ├── criacao_dashboards.py - criação de dashboards.
+=======
 # 
 # Ciclo de Vida do Projeto
 
@@ -124,3 +134,4 @@ Funcionalidades implementadas e testadas de forma individual.
 - Consolidar todas as funcionalidades desenvolvidas.
 - Realizar testes finais e preparar a documentação do projeto.
 - Entregar o projeto dentro do prazo estabelecido.
+>>>>>>> homolog
