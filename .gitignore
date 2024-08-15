@@ -1,0 +1,44 @@
+# Ignorar arquivos de checkpoint do Jupyter
+*.ipynb_checkpoints/
+
+# Ignorar arquivos de texto
+*.txt
+
+# Ignorar arquivos Excel
+*.xls
+*.xlsx
+*.xlsm
+*.xlsb
+
+# Ignorar arquivos de bytecode Python
+*.py[cod]
+__pycache__/
+
+# Ignorar ambientes virtuais
+venv/
+env/
+
+# Ignorar arquivos de sistema específicos
+.DS_Store
+Thumbs.db
+
+# Ignorar logs e bancos de dados
+*.log
+*.sqlite3
+
+# Ignorar configurações do VS Code
+.vscode/
+
+# Ignorar arquivos gerados pelo PyInstaller
+*.spec
+dist/
+build/
+__pycache__/
+*.toc
+*.pkg
+*.pyz
+*.html
+
+# idnorando arquivos compactados
+*.zip
+*.rar
