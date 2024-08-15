@@ -5,7 +5,7 @@ import tabula
 import PyPDF2
 import pandas as pd
 # reconhecer o caminho onde esta rodando.(tudo que for rodado seja dentro do dir) 
-os.chdir(os.path.dirname(__file__))
+##os.chdir(os.path.dirname(__file__))
 dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
 
 print(dir_atual)
