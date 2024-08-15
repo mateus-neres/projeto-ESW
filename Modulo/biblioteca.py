@@ -1,17 +1,21 @@
 from loguru import logger
 from openpyxl import Workbook
-import os
+import os, sys
 import tabula
 import PyPDF2
 import pandas as pd
+# reconhecer o caminho onde esta rodando.(tudo que for rodado seja dentro do dir) 
+os.chdir(os.path.dirname(__file__))
+dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
 
+print(dir_atual)
 # Recebe o diretório e o nome do arquivo PDF e retorna uma lista de tabelas extraídas
-def pdf_para_tabela(diretorio_pdf, nome_pdf):
+def pdf_para_tabela(nome_pdf):
     logger.info('Iniciando a conversão do PDF para tabelas.')
-    caminho_pdf = os.path.join(diretorio_pdf, nome_pdf)
+    caminho_absoluto = os.path.join(dir_atual, nome_pdf)
     
     try:
-        tabelas = tabula.read_pdf(caminho_pdf, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
+        tabelas = tabula.read_pdf(caminho_absoluto, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
         
         if not tabelas:
             logger.warning('Nenhuma tabela foi extraída do PDF.')
@@ -26,9 +30,9 @@ def pdf_para_tabela(diretorio_pdf, nome_pdf):
 
 
 # Recebe uma lista de tabelas, o diretório para salvar o arquivo Excel e o nome do arquivo, e cria um arquivo Excel
-def tabela_para_excel(tabelas, diretorio_excel, nome_arquivo_excel):
+def tabela_para_excel(tabelas, nome_arquivo_excel):
     logger.info('Iniciando a conversão das tabelas para arquivo Excel.')
-    caminho_excel = os.path.join(diretorio_excel, nome_arquivo_excel)
+    caminho_absoluto = os.path.join(dir_atual, nome_arquivo_excel)
     try:
         if not tabelas:
             logger.warning('Nenhuma tabela foi fornecida.')
@@ -46,19 +50,19 @@ def tabela_para_excel(tabelas, diretorio_excel, nome_arquivo_excel):
                 else:
                     logger.warning('Linha vazia encontrada e ignorada.')
 
-        workbook.save(caminho_excel)
-        logger.info(f'Arquivo Excel salvo com sucesso em: {caminho_excel}')
+        workbook.save(caminho_absoluto)
+        logger.info(f'Arquivo Excel salvo com sucesso em: {caminho_absoluto}')
 
     except Exception as e:
         logger.error(f'Erro ao salvar a tabela como Excel: {e}')
 
 
 # Recebe o caminho e o nome do arquivo PDF e retorna o texto extraído do PDF
-def ler_pdf(diretorio_pdf, nome_pdf):
+def ler_pdf( nome_pdf):
     logger.info('Iniciando a leitura do PDF.')
-    caminho_pdf = os.path.join(diretorio_pdf, nome_pdf)
+    caminho_absoluto = os.path.join(dir_atual, nome_pdf)
     try:
-        with open(caminho_pdf, 'rb') as arquivo_pdf:
+        with open(caminho_absoluto, 'rb') as arquivo_pdf:
             leitor_pdf = PyPDF2.PdfReader(arquivo_pdf)
             texto = ''
             
