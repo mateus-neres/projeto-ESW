@@ -4,16 +4,14 @@ import os, sys
 import tabula
 import PyPDF2
 import pandas as pd
-# reconhecer o caminho onde esta rodando.(tudo que for rodado seja dentro do dir) 
-##os.chdir(os.path.dirname(__file__))
+
+os.chdir(os.path.dirname(__file__))
 dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
 
-print(dir_atual)
-# Recebe o diretório e o nome do arquivo PDF e retorna uma lista de tabelas extraídas
-def pdf_para_tabela(nome_pdf):
+# Recebe o nome do arquivo PDF e retorna uma lista de tabelas extraídas
+def pdf_para_tabela(arquivo):
     logger.info('Iniciando a conversão do PDF para tabelas.')
-    caminho_absoluto = os.path.join(dir_atual, nome_pdf)
-    
+    caminho_absoluto = os.path.join(dir_atual, arquivo)
     try:
         tabelas = tabula.read_pdf(caminho_absoluto, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
         
@@ -30,9 +28,9 @@ def pdf_para_tabela(nome_pdf):
 
 
 # Recebe uma lista de tabelas, o diretório para salvar o arquivo Excel e o nome do arquivo, e cria um arquivo Excel
-def tabela_para_excel(tabelas, nome_arquivo_excel):
+def tabela_para_excel(tabelas, arquivo):
     logger.info('Iniciando a conversão das tabelas para arquivo Excel.')
-    caminho_absoluto = os.path.join(dir_atual, nome_arquivo_excel)
+    caminho_absoluto = os.path.join(dir_atual, arquivo)
     try:
         if not tabelas:
             logger.warning('Nenhuma tabela foi fornecida.')
@@ -58,9 +56,10 @@ def tabela_para_excel(tabelas, nome_arquivo_excel):
 
 
 # Recebe o caminho e o nome do arquivo PDF e retorna o texto extraído do PDF
-def ler_pdf( nome_pdf):
+def ler_pdf(arquivo):
     logger.info('Iniciando a leitura do PDF.')
-    caminho_absoluto = os.path.join(dir_atual, nome_pdf)
+    caminho_absoluto = os.path.join(dir_atual, arquivo)
+
     try:
         with open(caminho_absoluto, 'rb') as arquivo_pdf:
             leitor_pdf = PyPDF2.PdfReader(arquivo_pdf)
@@ -78,12 +77,13 @@ def ler_pdf( nome_pdf):
 
 
 # Cria um arquivo de texto a partir do conteúdo fornecido
-def criar_txt(conteudo, nome_arquivo_txt):
+def criar_txt(conteudo, arquivo):
     logger.info('Iniciando a criação do arquivo de texto.')
+    caminho_absoluto = os.path.join(dir_atual, arquivo)
     try:
-        with open(nome_arquivo_txt, 'w', encoding='utf-8') as arquivo_txt:
+        with open(caminho_absoluto, 'w', encoding='utf-8') as arquivo_txt:
             arquivo_txt.write(conteudo)
-        logger.info(f'Conteúdo escrito com sucesso no arquivo: {nome_arquivo_txt}')
+        logger.info(f'Conteúdo escrito com sucesso no arquivo: {arquivo}')
 
     except Exception as e:
         logger.error(f'Erro ao criar o arquivo de texto: {e}')
