@@ -37,9 +37,29 @@ Rio Tinto
 
 # Projeto de Engenharia de Software - Análise de Extratos Bancários
 
+## Visão do negócio
+
 </div>
 
 
+### Introdução
+
+**1.1 Finalidade** 
+
+Este documento tem o propósito de fornecer uma visão global acerca da solução a ser adotada na aplicação.
+
+### 1.2 Descrição do Negócio
+O objetivo da solução é criar uma ferramenta que leia extratos bancários mensais, fornecendo relatórios detalhados através de dashboards interativos dos rendimentos e despesas utilizando como entrada extratos bancários de qualquer instituição, mas com o padrão de formato PDF.
+
+### 1.3 Atividades e Processos de Negócio
+<div align="center">
+
+<img src="diagrama.png" alt="Alt Text" width="1000"/>
+
+</div>
+
+### 1.4 Oportunidade de Negócios
+Considerando o desafio de integração entre os dados do fluxo bancários em diferentes de instituições financeiras, a pluralidade e maneiras particulares de expor os extratos bancários ao cliente, a nossa aplicação visa estabelecer um canal de análise base, para mesclar e fornecer as principais interações estatísticas através dashboards interativos independente da quantidade extratos bancários fornecidos e de sua instituição de origem.
 
 
 
