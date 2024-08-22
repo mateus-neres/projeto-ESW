@@ -31,7 +31,11 @@ if __name__ == "__main__":
 
         # Verificar se as colunas a serem removidas existem no DataFrame
         colunas_para_remover = ['Saldo', 'Dt. balancete', 'Documento']
-        colunas_existentes = [col for col in colunas_para_remover if col in df.columns]
+        colunas_existentes = []
+
+        for coluna in colunas_para_remover:
+            if coluna in df.columns:
+                colunas_existentes.append(coluna)
 
         # Remover colunas desnecessárias
         df_cleaned = df.drop(columns=colunas_existentes)
