@@ -35,9 +35,9 @@ Rio Tinto
 #
 <div align="center">
 
-# Projeto de Engenharia de Software - Análise de Extratos Bancários
+# **Projeto de Engenharia de Software - Análise de Extratos Bancários**
 
-## Visão do negócio
+# **VISÃO DE NEGÓCIO**
 
 </div>
 
@@ -49,7 +49,7 @@ Rio Tinto
 Este documento tem o propósito de fornecer uma visão global acerca da solução a ser adotada na aplicação.
 
 ### 1.2 Descrição do Negócio
-O objetivo da solução é criar uma ferramenta que leia extratos bancários mensais, fornecendo relatórios detalhados através de dashboards interativos dos rendimentos e despesas utilizando como entrada extratos bancários de qualquer instituição, mas com o padrão de formato PDF.
+Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Universidade Federal da Paraíba. O objetivo da solução é criar uma ferramenta que leia extratos bancários mensais, fornecendo relatórios detalhados através de dashboards interativos dos rendimentos e despesas utilizando como entrada extratos bancários de qualquer instituição, mas com o padrão de formato PDF.
 
 ### 1.3 Atividades e Processos de Negócio
 <div align="center">
@@ -61,11 +61,6 @@ O objetivo da solução é criar uma ferramenta que leia extratos bancários men
 ### 1.4 Oportunidade de Negócios
 Considerando o desafio de integração entre os dados do fluxo bancários em diferentes de instituições financeiras, a pluralidade e maneiras particulares de expor os extratos bancários ao cliente, a nossa aplicação visa estabelecer um canal de análise base, para mesclar e fornecer as principais interações estatísticas através dashboards interativos independente da quantidade extratos bancários fornecidos e de sua instituição de origem.
 
-
-
-
-## Descrição
-Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Universidade Federal da Paraíba. O objetivo do projeto é criar uma ferramenta que leia extratos bancários mensais, extraia relatórios de gastos e rendimentos, e forneça uma análise detalhada através de dashboards interativos.
 <div align="center">
 
 ## Funcionalidades
@@ -117,7 +112,7 @@ PROJETO-ESW
 # 
 <div align="center">
 
-# Ciclo de Vida do Projeto
+# **CICLO DE VIDA DO PROJETO**
 ## Planejamento e Definição de Requisitos
 
 </div>
@@ -140,7 +135,7 @@ PROJETO-ESW
 #
 <div align="center">
 
-## Design do 
+## Design do projeto
 
 </div>
 
@@ -160,7 +155,7 @@ PROJETO-ESW
 - Estrutura inicial do projeto (como a organização das pastas e arquivos).
 <div align="center">
 
-# Desenvolvimento
+# **DESENVOLVIMENTO**
 
 </div>
 
@@ -184,7 +179,7 @@ PROJETO-ESW
 - Funcionalidades implementadas e testadas de forma individual.
 <div align="center">
 
-# Testes
+# **TESTES**
 
 </div>
 
@@ -205,7 +200,7 @@ PROJETO-ESW
 
 <div align="center">
 
-# Implantação
+# **IMPLANTAÇÃO**
 
 </div>
 
@@ -224,7 +219,7 @@ PROJETO-ESW
 - Documentação do projeto final.
 <div align="center">
 
-# Manutenção
+# **MANUTENÇÃO**
 
 </div>
 
@@ -245,17 +240,14 @@ PROJETO-ESW
 #
 <div align="center">
 
-# Processo de Desenvolvimento
+# **PROCESSO DE DESENVOLVIMENTO**
 
 </div>
 
-### Iteração Inicial
+### Metodologia de Desenvolvimento
 
 - Começar com uma iteração curta para implementar as funcionalidades básicas, como a leitura de extratos e extração de dados.
 - Focar em um protótipo funcional que permita a leitura de diferentes formatos de arquivos e a geração de relatórios simples.
-
-### Desenvolvimento Incremental
-
 - Adicionar novas funcionalidades em cada iteração:
 - Implementação de relatórios mais detalhados.
 - Desenvolvimento de dashboards interativos.
@@ -273,7 +265,7 @@ PROJETO-ESW
 - Entregar o projeto dentro do prazo estabelecido.
 <div align="center">
 
-# Documento de Requisitos de Software (SRS)
+# **DOCUMENTÇÃO DE REQUISITOS DE SOFTWARE (SRS)**
 
 </div>
 
@@ -305,7 +297,7 @@ PROJETO-ESW
 - ❖ Critérios de Aceitação:
 
   - ➢ O sistema deve ser capaz de ler e extrair texto de pelo menos 95% dos arquivos PDF fornecidos.
-  - ➢ Osistema deve detectar e relatar qualquer falha ao tentar ler um PDF não suportado.
+  - ➢ Os istema deve detectar e relatar qualquer falha ao tentar ler um PDF não suportado.
 
  #### 2.2 Extração e categorização de dados financeiros
 
@@ -337,7 +329,7 @@ PROJETO-ESW
  - ❖ Critérios de Aceitação:
 
    - ➢ Os relatórios devem ser gerados com precisão e devem estar formatados corretamente.
-   - ➢ Osistema deve permitir exportação em todos os formatos suportados sem perda de dados.
+   - ➢ Os istema deve permitir exportação em todos os formatos suportados sem perda de dados.
 
  #### 2.4 Criação de dashboards interativos
 
@@ -357,7 +349,7 @@ PROJETO-ESW
 
  ### 3. Requisitos Não Funcionais
 
- #### 3.1 Desempenho eficiente na leitura e processamento dos 
+ #### 3.1 Desempenho eficiente na leitura e processamento dos arquivos PDF 
 
  - ❖ Descrição: O sistema deve processar arquivos PDF de forma eficiente, sem a especificação de tempo ou tamanho de arquivo.
 
@@ -369,7 +361,7 @@ PROJETO-ESW
 
  - ❖ Critérios de Aceitação:
 
-   - ➢ Osistema deve manter desempenho consistente sob carga elevada.
+   - ➢ Os istema deve manter desempenho consistente sob carga elevada.
 
  #### 3.2 Interface intuitiva para geração e visualização de relatórios
 
@@ -460,11 +452,11 @@ PROJETO-ESW
  Este relatório foi gerado com base nos dados disponíveis no extrato. Caso deseje informações mais detalhadas ou alguma modificação, sinta-se à vontade para pedir! Geração de Relatórios Detalhados Objetivo: Fornecer uma visão simples e clara dos valores pagos e recebidos.
 <div align="center">
 
- # Estrutura da Tabela
+ # **ESTRUTUA DA TABELA**
 
 </div>
 
- - ● Colunas:
+  ### Colunas:
 
  1. NomedaTransação: Descrição básica (ex.: "Recebimento de ICMS").
  2. Tipo: Entrada ou Saída.
