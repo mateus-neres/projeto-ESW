@@ -7,7 +7,6 @@ import pandas as pd
 from lib_ESW import LibEsw
 
 caminho_pdf = os.getcwd()+"\\test\\test.pdf"
-print(os.getcwd()+"\\test\\test.pdf")
 
 class TestLibEsw(unittest.TestCase):
     

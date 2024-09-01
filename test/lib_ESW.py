@@ -70,7 +70,7 @@ class LibEsw:
             with pdfplumber.open(caminho_pdf) as pdf:
                 pagina = pdf.pages[0]
                 texto = pagina.extract_text()
-                print(f"Texto extraído: {texto}")
+                #print(f"Texto extraído: {texto}")
                 return texto
         except FileNotFoundError:
             print(f"Arquivo não encontrado: {caminho_pdf}")
