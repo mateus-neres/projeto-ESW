@@ -1,23 +1,26 @@
 from loguru import logger
 from openpyxl import Workbook
-import os, sys
+import os
+import sys
 import tabula
 import PyPDF2
 import pandas as pd
+import pdfplumber
 
 
+from dataclasses import dataclass
 
-class Lib_esw:
+@dataclass
+class LibEsw:
+    def __init__(self):
+        self.dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
 
-    os.chdir(os.path.dirname(__file__))
-    dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
-
-
-
-    # Recebe o nome do arquivo PDF e retorna uma lista de tabelas extraídas
-    def pdf_para_tabela(arquivo):
+    def pdf_para_tabela(self, arquivo):
+        """
+        Recebe o nome do arquivo PDF e retorna uma lista de tabelas extraídas.
+        """
         logger.info('Iniciando a conversão do PDF para tabelas.')
-        caminho_absoluto = os.path.join(dir_atual, arquivo)
+        caminho_absoluto = os.path.join(self.dir_atual, arquivo)
         try:
             tabelas = tabula.read_pdf(caminho_absoluto, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
             
@@ -32,11 +35,12 @@ class Lib_esw:
             logger.error(f'Erro ao converter PDF para tabelas: {e}')
             return None
 
-
-    # Recebe uma lista de tabelas, o diretório para salvar o arquivo Excel e o nome do arquivo, e cria um arquivo Excel
-    def tabela_para_excel(tabelas, arquivo):
+    def tabela_para_excel(self, tabelas, arquivo):
+        """
+        Recebe uma lista de tabelas, o diretório para salvar o arquivo Excel e o nome do arquivo, e cria um arquivo Excel.
+        """
         logger.info('Iniciando a conversão das tabelas para arquivo Excel.')
-        caminho_absoluto = os.path.join(dir_atual, arquivo)
+        caminho_absoluto = os.path.join(self.dir_atual, arquivo)
         try:
             if not tabelas:
                 logger.warning('Nenhuma tabela foi fornecida.')
@@ -60,32 +64,28 @@ class Lib_esw:
         except Exception as e:
             logger.error(f'Erro ao salvar a tabela como Excel: {e}')
 
-
-    # Recebe o caminho e o nome do arquivo PDF e retorna o texto extraído do PDF
-    def ler_pdf(arquivo):
-        logger.info('Iniciando a leitura do PDF.')
-        caminho_absoluto = os.path.join(dir_atual, arquivo)
-
+    def ler_pdf(caminho_pdf):
         try:
-            with open(caminho_absoluto, 'rb') as arquivo_pdf:
-                leitor_pdf = PyPDF2.PdfReader(arquivo_pdf)
-                texto = ''
-                
-                for pagina in range(len(leitor_pdf.pages)):
-                    texto += leitor_pdf.pages[pagina].extract_text()
-            
-            logger.info('Leitura do PDF concluída com sucesso.')
-            return texto
-
+            print(f"Tentando abrir o arquivo PDF em: {caminho_pdf}")
+            with pdfplumber.open(caminho_pdf) as pdf:
+                pagina = pdf.pages[0]
+                texto = pagina.extract_text()
+                print(f"Texto extraído: {texto}")
+                return texto
+        except FileNotFoundError:
+            print(f"Arquivo não encontrado: {caminho_pdf}")
+            return None
         except Exception as e:
-            logger.error(f'Erro ao ler o PDF: {e}')
+            print(f"Erro ao ler o PDF: {e}")
             return None
 
 
-    # Cria um arquivo de texto a partir do conteúdo fornecido
-    def criar_txt(conteudo, arquivo):
+    def criar_txt(self, conteudo, arquivo):
+        """
+        Cria um arquivo de texto a partir do conteúdo fornecido.
+        """
         logger.info('Iniciando a criação do arquivo de texto.')
-        caminho_absoluto = os.path.join(dir_atual, arquivo)
+        caminho_absoluto = os.path.join(self.dir_atual, arquivo)
         try:
             with open(caminho_absoluto, 'w', encoding='utf-8') as arquivo_txt:
                 arquivo_txt.write(conteudo)
@@ -94,8 +94,10 @@ class Lib_esw:
         except Exception as e:
             logger.error(f'Erro ao criar o arquivo de texto: {e}')
 
-    # Ajusta o valor de acordo com o formato esperado
-    def ajustar_valor(valor):
+    def ajustar_valor(self, valor):
+        """
+        Ajusta o valor de acordo com o formato esperado.
+        """
         if pd.isna(valor):
             logger.info('Valor é NaN, retornando None.')
             return None
