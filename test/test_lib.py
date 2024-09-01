@@ -6,7 +6,11 @@ import sys
 import pandas as pd
 from lib_ESW import LibEsw
 
+caminho_pdf = os.getcwd()+"\\test\\test.pdf"
+print(os.getcwd()+"\\test\\test.pdf")
+
 class TestLibEsw(unittest.TestCase):
+    
     def setUp(self):
         self.lib_esw = LibEsw()
         self.test_pdf = "test.pdf"
@@ -27,24 +31,10 @@ class TestLibEsw(unittest.TestCase):
     def test_tabela_para_excel(self, mock_save):
         self.lib_esw.tabela_para_excel([self.test_table], self.test_excel)
         self.assertTrue(mock_save.called)
-
-    #@patch('PyPDF2.PdfReader')
-    #def test_ler_pdf(self, mock_pdf_reader):
-      #  mock_pdf_reader.return_value.pages = [MagicMock(extract_text=MagicMock(return_value="Page 1 text")),
-       #                                       MagicMock(extract_text=MagicMock(return_value="Page 2 text"))]
-     #   result = self.lib_esw.ler_pdf(self.test_pdf)
-        #self.assertIsNotNone(result)
-        #self.assertIn("Page 1 text", result)
-        #self.assertIn("Page 2 text", result)
-    
-    
-
-
+  
     def test_ler_pdf(self):
-        caminho_pdf = '/home/erick/Documents/ProjetoEngenharia/projeto-ESW/test/test.pdf'
         resultado = LibEsw.ler_pdf(caminho_pdf)
         self.assertIsNotNone(resultado)
-        #self.assertIn("Texto esperado", resultado)
 
     @patch('builtins.open', new_callable=mock_open)
     def test_criar_txt(self, mock_file):
