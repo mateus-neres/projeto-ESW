@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 # Definindo o diretório atual
-os.chdir(os.path.dirname(__file__))
+
 dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
 
 try:
