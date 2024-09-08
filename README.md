@@ -41,24 +41,21 @@ Rio Tinto
 
 </div>
 
-
-### Introdução
-
-**1.1 Finalidade** 
+### Finalidade
 
 Este documento tem o propósito de fornecer uma visão global acerca da solução a ser adotada na aplicação.
 
-### 1.2 Descrição do Negócio
+### Descrição do Negócio
 Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Universidade Federal da Paraíba. O objetivo da solução é criar uma ferramenta que leia extratos bancários mensais, fornecendo relatórios detalhados através de dashboards interativos dos rendimentos e despesas utilizando como entrada extratos bancários de qualquer instituição, mas com o padrão de formato PDF.
 
-### 1.3 Atividades e Processos de Negócio
+### Atividades e Processos de Negócio
 <div align="center">
 
 <img src="diagrama.png" alt="Alt Text" width="1000"/>
 
 </div>
 
-### 1.4 Oportunidade de Negócios
+### Oportunidade de Negócios
 Considerando o desafio de integração entre os dados do fluxo bancários em diferentes de instituições financeiras, a pluralidade e maneiras particulares de expor os extratos bancários ao cliente, a nossa aplicação visa estabelecer um canal de análise base, para mesclar e fornecer as principais interações estatísticas através dashboards interativos independente da quantidade extratos bancários fornecidos e de sua instituição de origem.
 
 <div align="center">
@@ -269,21 +266,21 @@ PROJETO-ESW
 
 </div>
 
- ### 1. Introdução
+ ### Introdução
 
  Este documento descreve os requisitos funcionais e não funcionais para o sistema de leitura e processamento de arquivos PDF, extração e categorização de dados financeiros, e geração de relatórios e dashboards interativos.
 
- #### 1.1- Prioridade dos Requisitos
+ #### Prioridade dos Requisitos
 
-**A cada requisito será atribuída uma prioridade. A descrição de cada uma segueabaixo:**
+A cada requisito será atribuída uma prioridade. A descrição de cada uma segueabaixo:**
 
  - Essencial: é um requisito imprescindível. Sem ele, o sistema não funcionará.
  - Importante: é um requisito que deve ser implementado, mas, se não for, o sistema funcionará do mesmo jeito, mas de maneira insatisfatória.
   - Desejável: é um requisito que trará um diferencial adicional ao sistema. Por isso, pode ser deixado para ser implementado por último ou em próximas iterações.
 
- ### 2. Requisitos Funcionais
+ ### Requisitos Funcionais
 
- #### 2.1 Leitura de arquivos PDF
+ #### Leitura de arquivos PDF
 
 - ❖ Descrição: O sistema deve ser capaz de ler arquivos PDF em diversos formatos e extrair o conteúdo textual e estruturado necessário para análise.
 
@@ -299,7 +296,7 @@ PROJETO-ESW
   - ➢ O sistema deve ser capaz de ler e extrair texto de pelo menos 95% dos arquivos PDF fornecidos.
   - ➢ Os istema deve detectar e relatar qualquer falha ao tentar ler um PDF não suportado.
 
- #### 2.2 Extração e categorização de dados financeiros
+ #### Extração e categorização de dados financeiros
 
 - ❖ Descrição: O sistema deve extrair dados financeiros relevantes dos arquivos PDF ecategorizá-los de acordo com critérios predefinidos.
 
@@ -315,7 +312,7 @@ PROJETO-ESW
   - ➢ Os dados extraídos devem corresponder a pelo menos 98% das informações financeiras presentes nos PDFs.
   - ➢ Ascategorias devem estar alinhadas com as categorias predefinidas e ser ajustáveis conforme necessário.
 
- #### 2.3 Geração de relatórios financeiros detalhados
+ #### Geração de relatórios financeiros detalhados
 
  - ❖ Descrição: O sistema deve gerar relatórios detalhados baseados nos dados financeiros extraídos e categorizados.
 
@@ -331,7 +328,7 @@ PROJETO-ESW
    - ➢ Os relatórios devem ser gerados com precisão e devem estar formatados corretamente.
    - ➢ Os istema deve permitir exportação em todos os formatos suportados sem perda de dados.
 
- #### 2.4 Criação de dashboards interativos
+ #### Criação de dashboards interativos
 
  - ❖ Descrição: O sistema deve criar dashboards interativos que permitam a visualização e análise dos dados financeiros extraídos.
 
@@ -347,9 +344,9 @@ PROJETO-ESW
    - ➢ Dashboards devem ser responsivos e permitir a interação fluida com os dados.
    - ➢ Os dados exibidos nos dashboards devem estar atualizados e precisos.
 
- ### 3. Requisitos Não Funcionais
+ ### Requisitos Não Funcionais
 
- #### 3.1 Desempenho eficiente na leitura e processamento dos arquivos PDF 
+ #### Desempenho eficiente na leitura e processamento dos arquivos PDF 
 
  - ❖ Descrição: O sistema deve processar arquivos PDF de forma eficiente, sem a especificação de tempo ou tamanho de arquivo.
 
@@ -363,7 +360,7 @@ PROJETO-ESW
 
    - ➢ Os istema deve manter desempenho consistente sob carga elevada.
 
- #### 3.2 Interface intuitiva para geração e visualização de relatórios
+ #### Interface intuitiva para geração e visualização de relatórios
 
  - ❖ Descrição: O sistema deve ter uma interface de usuário intuitiva que facilite a geração e visualização de relatórios e dashboards.
 
@@ -380,7 +377,7 @@ PROJETO-ESW
 
    - ➢ Feedback dos usuários deve indicar uma alta taxa de satisfação com a interface.
 
- #### 3.3 Compatibilidade com ferramentas de visualização de dados como Power BI ou Looker Studio
+ #### Compatibilidade com ferramentas de visualização de dados como Power BI ou Looker Studio
 
  - ❖ Descrição: O sistema deve ser compatível com ferramentas de visualização de dados como Power BI e Looker Studio.
 
