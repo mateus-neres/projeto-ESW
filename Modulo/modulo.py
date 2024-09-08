@@ -52,6 +52,7 @@ try:
     # Aplicar a função ao DataFrame e atualizar a coluna 'Valor R$'
     df_cleaned['Valor R$'] = df_cleaned['Valor R$'].apply(ajustar_valor)
 
+<<<<<<< HEAD
     # Salvar o DataFrame limpo em um novo arquivo Excel
     caminho_absoluto = os.path.join(dir_atual, "ExtratoLimpo.xlsx")
     df_cleaned.to_excel(caminho_absoluto, index=False)
@@ -62,3 +63,7 @@ except Exception as e:
 
 
 a = input('Digite qualquer tecla para encerrar: ')
+=======
+    except Exception as e:
+        logger.error(f'Erro ao executar o código principal: {e}')
+>>>>>>> b4b04c7fc4f15f374b9baf9579f01ea0d09bf692
