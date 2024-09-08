@@ -462,3 +462,7 @@ PROJETO-ESW
  2. Tipo: Entrada ou Saída.
  3. Valor: Valor monetário da transação.
  4. Descrição: Breve descrição do que foi pago ou recebido (opcional).
+
+
+======================================================================================================
+# projeto não concluido, ainda em faze de testes.
