@@ -265,7 +265,7 @@ PROJETO-ESW
 - Entregar o projeto dentro do prazo estabelecido.
 <div align="center">
 
-# **DOCUMENTÇÃO DE REQUISITOS DE SOFTWARE (SRS)**
+# **DOCUMENTAÇÃO DE REQUISITOS DE SOFTWARE (SRS)**
 
 </div>
 
@@ -361,7 +361,7 @@ PROJETO-ESW
 
  - ❖ Critérios de Aceitação:
 
-   - ➢ Os istema deve manter desempenho consistente sob carga elevada.
+   - ➢ Os sistema deve manter desempenho consistente sob carga elevada.
 
  #### 3.2 Interface intuitiva para geração e visualização de relatórios
 
