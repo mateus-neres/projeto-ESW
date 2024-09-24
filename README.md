@@ -103,6 +103,25 @@ Considerando o desafio de integração entre os dados do fluxo bancários em dif
         |
         ├── teste
         |   |
+        |   ├── relatorio_de_teste
+        |   |   |
+        |   |   ├── coverage_html_cb_6fb7b396.js - exibir o relatório HTML de cobertura de código.
+        |   |   |
+        |   |   ├── favicon_32_cb_58284776.png - O ícone favicon exibido na aba do navegador quando você abre o relatório HTML.
+        |   |   |
+        |   |   ├── index.html - Exibi os resultados da cobertura de teste do seu código
+        |   |   |
+        |   |   ├── keybd_closed_cb_ce680311.png - Imagem auxiliar utilizada no relatório.
+        |   |   |
+        |   |   ├── lib_ESW_py.html - exibe as linhas de código e destaca quais partes foram ou não cobertas pelos testes
+        |   |   |
+        |   |   ├── status.json - contém informações sobre a cobertura de teste em formato estruturado.
+        |   |   |
+        |   |   ├── style_cb_8e611ae1.css - controla a aparência das páginas, como cores, fontes, e layout.
+        |   |   |
+        |   |   ├── test_lib_py.html - exibe as linhas de código e destaca quais partes foram ou não cobertas pelos testes
+        |   |   
+        |   |
         │   ├── lib_ESW.py - Base funções para teste unitarios.
         |   |
         │   ├── test_lib.py - Modelos de teste.
