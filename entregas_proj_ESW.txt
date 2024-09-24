@@ -6,7 +6,7 @@ Projeto de Engenharia de Software - Análise de Extratos Bancários
 	[] Processo de desenvolvimento
 	[] Requisitos de software (SRS)
 2° ENTREGA:
-	[] Diagrama de requisitos não funcionais
+	[] Diagrama de requisitos funcionais e não funcionais
 	[] Planejamento de testes
 	[] Documentação de interface com Power Bi
 	[] Modelo de testes
