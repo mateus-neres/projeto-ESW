@@ -464,9 +464,9 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
 <div align="center">
 
-[Modelo de testes](test_lib.py) 
+[Modelo de testes](https://github.com/mateus-neres/projeto-ESW/blob/main/test/test_lib.py) 
 
-[Base de teste](lib_ESW.py)
+[Base de teste](https://github.com/mateus-neres/projeto-ESW/blob/main/test/lib_ESW.py)
 
 [Logs de testes](logfile.txt)
 
