@@ -37,9 +37,11 @@ Rio Tinto
 
 # **Projeto de Engenharia de Software - Análise de Extratos Bancários**
 
+# **VISÃO DE NEGÓCIO**
+
 </div>
 
-# **VISÃO DE NEGÓCIO**
+
 
 
 
