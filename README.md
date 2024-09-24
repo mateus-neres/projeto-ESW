@@ -86,6 +86,7 @@ Considerando o desafio de integração entre os dados do fluxo bancários em dif
         |
         ├── modulo
         |   |
+        |   |
         │   ├── modulo.py - Código principal do projeto.
         |   |
         │   ├── lib_ESW.py - Arquivo contendo funções utilizadas no projeto.
@@ -103,7 +104,9 @@ Considerando o desafio de integração entre os dados do fluxo bancários em dif
         |
         ├── teste
         |   |
+        |   |
         |   ├── relatorio_de_teste
+        |   |   |
         |   |   |
         |   |   ├── coverage_html_cb_6fb7b396.js - exibir o relatório HTML de cobertura de código.
         |   |   |
