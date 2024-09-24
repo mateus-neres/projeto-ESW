@@ -455,16 +455,15 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
 <div align="center">
 
-[Modelo de testes](https://github.com/mateus-neres/projeto-ESW/blob/main/test/test_lib.py) 
+[Click aqui para ver o relatório de Testes](http://127.0.0.1:5500/teste/relatorio_de_teste/index.html)
 
-[Base de teste](https://github.com/mateus-neres/projeto-ESW/blob/main/test/lib_ESW.py)
+[Click aqui para ver o modelo de testes](https://github.com/mateus-neres/projeto-ESW/blob/main/test/test_lib.py) 
 
-[Logs de testes](https://github.com/mateus-neres/projeto-ESW/blob/main/logfile.txt)
+[Click aqui para ver o base de teste](https://github.com/mateus-neres/projeto-ESW/blob/main/test/lib_ESW.py)
 
-</div>
+[Click aqui para ver o logs de testes](https://github.com/mateus-neres/projeto-ESW/blob/main/logfile.txt)
 
 #
-<div align="center">
 
 # **INTERFACE COM POWER BI**
 [Click aqui para abrir o DashBoard](https://app.powerbi.com/view?r=eyJrIjoiYTM0ODdlN2UtNzgwMC00NjA2LWEzY2UtZmI0YmRiNWI4OTM2IiwidCI6ImJmN2UwZjYwLTVhMjktNDk4Ny1iNzA5LWYxYWIyODhmNjM4NSJ9)
