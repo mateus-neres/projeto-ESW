@@ -346,15 +346,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
             +--------------------------------------------------------------+
 #
 
-<div align="center">
-
-# **2° ENTREGA**
-
-</div>
-
-
  ## Requisitos Não Funcionais
-
 
             +---------------------------------------------------------+     
             | 1. Desempenho na Leitura e Processamento de Arquivos PDF|
@@ -371,8 +363,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
             |   Critério: Desempenho          |
             | consistente sob carga elevada.  |
             +---------------------------------+
-  #
-
+#
             +-----------------------------------------------------------+
             | 2. Interface Intuitiva para Relatórios e Dashboards       |
             +-----------------------------------------------------------+
