@@ -81,23 +81,27 @@ Considerando o desafio de integração entre os dados do fluxo bancários em dif
 
 PROJETO-ESW
 
-├── modulo/
-
-│   ├── modulo.py - Código principal do projeto
-
-│   ├── lib_ESW.py - Arquivo contendo funções utilizadas no projeto.
-
-│   ├── extratos/Extratos bancários para análise.
-
-│   ├── relatorios/Relatórios gerados a partir dos extratos.
-
-│   ├── dashboards/Dashboards criados para visualização - integração com power BI
-
-├── teste
-
-│   ├── analise_extratos.py - 
-
-│   ├── geracao_relatorios.py - 
+      ├── modulo/
+      |   |
+      │   ├── modulo.py - Código principal do projeto
+      |   |
+      │   ├── lib_ESW.py - Arquivo contendo funções utilizadas no projeto.
+      |   |
+      │   ├── extrato.pdf - Base de dados.
+      |   |
+      │   ├── extrato.xlsx - Relatórios extraido do pdf para tratamento.
+      |   |
+      │   ├── ExtratoLimpo.xlsx - Relatório para entrega ao cliente e conecção com o Power BI
+      |   |
+      │   ├── logfile.txt - Logs para analise de funcionamento do sistema
+      |   |
+      │   ├── DashBoard - Dashboards criados para visualização - integração com power BI            
+      |
+      ├── teste
+      |   |
+      │   ├── lib_ESW.py
+      |   |
+      │   ├── test_lib.py
 
 
 # 
@@ -334,53 +338,53 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
  ## Requisitos Não Funcionais
 
 
-                                                +---------------------------------------------------------+     
-                                                | 1. Desempenho na Leitura e Processamento de Arquivos PDF|
-                                                +---------------------------------------------------------+
-                                                              |                                   |                       
-                                                +-----------[NF001]-----------+   +-------------[NF002]-------------+
-                                                |   O sistema deve suportar   |   |   Eficiência sem especificação  |
-                                                | a leitura e processamento   |   | de tempo ou tamanho.            |
-                                                | simultâneo de múltiplos     |   |                                 |
-                                                | arquivos PDF.               |   |                                 |
-                                                +-----------------------------+   +---------------------------------+
-                                                                |       
-                                                +---------------------------------+
-                                                |   Critério: Desempenho          |
-                                                | consistente sob carga elevada.  |
-                                                +---------------------------------+
+                                  +---------------------------------------------------------+     
+                                  | 1. Desempenho na Leitura e Processamento de Arquivos PDF|
+                                  +---------------------------------------------------------+
+                                                |                                   |                       
+                                  +-----------[NF001]-----------+   +-------------[NF002]-------------+
+                                  |   O sistema deve suportar   |   |   Eficiência sem especificação  |
+                                  | a leitura e processamento   |   | de tempo ou tamanho.            |
+                                  | simultâneo de múltiplos     |   |                                 |
+                                  | arquivos PDF.               |   |                                 |
+                                  +-----------------------------+   +---------------------------------+
+                                                  |       
+                                  +---------------------------------+
+                                  |   Critério: Desempenho          |
+                                  | consistente sob carga elevada.  |
+                                  +---------------------------------+
 #
 
-                                                +-----------------------------------------------------------+
-                                                | 2. Interface Intuitiva para Relatórios e Dashboards       |
-                                                +-----------------------------------------------------------+
-                                                              |                                   |                       
-                                                +-----------[NF003]-----------+   +-------------[NF004]-------------+
-                                                |   A interface deve ser      |   |   Funcionalidades principais    |
-                                                | fácil de usar e navegar.    |   | acessíveis em no máximo três    |
-                                                |                             |   | cliques.                        |
-                                                +-----------------------------+   +---------------------------------+
-                                                              |                                  |
-                                         +------------------------------------+   +------------------------------------+
-                                         |   Critério: Geração e visualização |   |   Critério: Alta satisfação dos    |
-                                         | de relatórios com facilidade.      |   | usuários com a interface.          |
-                                         +------------------------------------+   +------------------------------------+
+                                  +-----------------------------------------------------------+
+                                  | 2. Interface Intuitiva para Relatórios e Dashboards       |
+                                  +-----------------------------------------------------------+
+                                                |                                   |                       
+                                  +-----------[NF003]-----------+   +-------------[NF004]-------------+
+                                  |   A interface deve ser      |   |   Funcionalidades principais    |
+                                  | fácil de usar e navegar.    |   | acessíveis em no máximo três    |
+                                  |                             |   | cliques.                        |
+                                  +-----------------------------+   +---------------------------------+
+                                                |                                  |
+                            +------------------------------------+   +------------------------------------+
+                            |   Critério: Geração e visualização |   |   Critério: Alta satisfação dos    |
+                            | de relatórios com facilidade.      |   | usuários com a interface.          |
+                            +------------------------------------+   +------------------------------------+
 #
 
-                                                +---------------------------------------------------------------+
-                                                | 3. Compatibilidade com Ferramentas de Visualização de Dados   |
-                                                +---------------------------------------------------------------+
-                                                              |                                    |
-                                                +-----------[NF005]-----------+   +-------------[NF006]-------------+
-                                                |   Exportação compatível     |   |   Integração ou exportação      |
-                                                | com Power BI, Looker Studio.|   | direta sem erros significativos.|
-                                                |                             |   |                                 |
-                                                +-----------------------------+   +---------------------------------+
-                                                              |                                  |
-                                         +------------------------------------+   +------------------------------------+
-                                         |   Critério: Dados corretamente     |   |   Critério: Funcionamento sem      |
-                                         | importados nas ferramentas.        |   | erros significativos.              |
-                                         +------------------------------------+   +------------------------------------+
+                                  +---------------------------------------------------------------+
+                                  | 3. Compatibilidade com Ferramentas de Visualização de Dados   |
+                                  +---------------------------------------------------------------+
+                                                |                                    |
+                                  +-----------[NF005]-----------+   +-------------[NF006]-------------+
+                                  |   Exportação compatível     |   |   Integração ou exportação      |
+                                  | com Power BI, Looker Studio.|   | direta sem erros significativos.|
+                                  |                             |   |                                 |
+                                  +-----------------------------+   +---------------------------------+
+                                                |                                  |
+                            +------------------------------------+   +------------------------------------+
+                            |   Critério: Dados corretamente     |   |   Critério: Funcionamento sem      |
+                            | importados nas ferramentas.        |   | erros significativos.              |
+                            +------------------------------------+   +------------------------------------+
 #
 <div align="center">
 
@@ -389,56 +393,56 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 </div>
 
 
-                                                                      +-------------------------+
-                                                                      |  Planejamento de Testes |
-                                                                      +-------------------------+
-                                                                                  |
-                                                                        +----------+----------+
-                                                                        |                     |
-                                                                    +--v--+         +--------v--+----+      
-                                                                    |Fluxo|         |Tecnologia Usada|
-                                                                    +-----+         +----------------+
-                                                                      |                      |
-                                                                      v                      v
-                                                              +----------------+      +--------------------------+
-                                                              | Identificar    |      | Ferramenta de Automação  |
-                                                              | Requisitos     |      | de Testes                |
-                                                              +----------------+      +--------------------------+
-                                                                        |                       |
-                                                                +-------v----------+   +--------------------+
-                                                                | Definir Critérios|   | Framework de Teste:|
-                                                                | de Aceitação     |   | unittest           |
-                                                                +------------------+   +--------------------+
-                                                                        |                 |
-                                                                +-------v-------+     +---------------------+
-                                                                | Criar Casos   |     | Sistema de Controle |
-                                                                | de Teste      |     | de Versão: GitHub   |
-                                                                +---------------+     +---------------------+
-                                                                        |             
-                                                                +-------v--------+     
-                                                                | Executar Testes|     
-                                                                +----------------+    
-                                                                        |             
-                                                                +-------v-------+
-                                                                | Registrar     |
-                                                                | Resultados    |
-                                                                +---------------+
-                                                                       |
-                                                                +------v---------+
-                                                                |   Resultados   |
-                                                                +----------------+
-                                                                       |
-                                                                +------v----------------------------+
-                                                                | Resultados Esperados vs Reais     |
-                                                                +-----------------------------------+
-                                                                       |
-                                                                +------v----------------------------+
-                                                                | Registro de Defeitos              |
-                                                                +-----------------------------------+
-                                                                       |
-                                                                +------v----------------------------+
-                                                                | Relatório de Execução de Testes   |
-                                                                +-----------------------------------+
+                                                        +-------------------------+
+                                                        |  Planejamento de Testes |
+                                                        +-------------------------+
+                                                                    |
+                                                          +----------+----------+
+                                                          |                     |
+                                                      +--v--+         +--------v--+----+      
+                                                      |Fluxo|         |Tecnologia Usada|
+                                                      +-----+         +----------------+
+                                                        |                      |
+                                                        v                      v
+                                                +----------------+      +--------------------------+
+                                                | Identificar    |      | Ferramenta de Automação  |
+                                                | Requisitos     |      | de Testes                |
+                                                +----------------+      +--------------------------+
+                                                          |                       |
+                                                  +-------v----------+   +--------------------+
+                                                  | Definir Critérios|   | Framework de Teste:|
+                                                  | de Aceitação     |   | unittest           |
+                                                  +------------------+   +--------------------+
+                                                          |                 |
+                                                  +-------v-------+     +---------------------+
+                                                  | Criar Casos   |     | Sistema de Controle |
+                                                  | de Teste      |     | de Versão: GitHub   |
+                                                  +---------------+     +---------------------+
+                                                          |             
+                                                  +-------v--------+     
+                                                  | Executar Testes|     
+                                                  +----------------+    
+                                                          |             
+                                                  +-------v-------+
+                                                  | Registrar     |
+                                                  | Resultados    |
+                                                  +---------------+
+                                                          |
+                                                  +------v---------+
+                                                  |   Resultados   |
+                                                  +----------------+
+                                                          |
+                                                  +------v----------------------------+
+                                                  | Resultados Esperados vs Reais     |
+                                                  +-----------------------------------+
+                                                          |
+                                                  +------v----------------------------+
+                                                  | Registro de Defeitos              |
+                                                  +-----------------------------------+
+                                                          |
+                                                  +------v----------------------------+
+                                                  | Relatório de Execução de Testes   |
+                                                  +-----------------------------------+
 <div align="center">
 
 [Modelo de testes](test_lib.py) 
