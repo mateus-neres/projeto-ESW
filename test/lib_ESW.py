@@ -6,9 +6,9 @@ import tabula
 import PyPDF2
 import pandas as pd
 import pdfplumber
-
-
 from dataclasses import dataclass
+
+logger.add('logfile.txt', format="{time} {level} {file} {message}", level="INFO")
 
 @dataclass
 class LibEsw:
