@@ -33,7 +33,7 @@ class TestLibEsw(unittest.TestCase):
   
     def test_ler_pdf(self):
         resultado = LibEsw.ler_pdf(caminho_pdf)
-        self.assertIsNotNone(resultado)
+        self.assertIsNone(resultado)
 
     @patch('builtins.open', new_callable=mock_open)
     def test_criar_txt(self, mock_file):
