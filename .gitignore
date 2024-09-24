@@ -2,7 +2,6 @@
 *.ipynb_checkpoints/
 
 # Ignorar arquivos de texto
-*.txt
 
 # Ignorar arquivos Excel
 *.xls
