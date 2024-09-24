@@ -36,7 +36,6 @@ __pycache__/
 *.toc
 *.pkg
 *.pyz
-*.html
 
 # idnorando arquivos compactados
 *.zip
