@@ -37,53 +37,47 @@ Rio Tinto
 
 # **Projeto de Engenharia de Software - Análise de Extratos Bancários**
 
-# **VISÃO DE NEGÓCIO**
-
 </div>
 
-### Finalidade
+# **VISÃO DE NEGÓCIO**
+
+
+
+## 1. Finalidade
 
 Este documento tem o propósito de fornecer uma visão global acerca da solução a ser adotada na aplicação.
 
-### Descrição do Negócio
+## 2. Descrição do Negócio
 Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Universidade Federal da Paraíba. O objetivo da solução é criar uma ferramenta que leia extratos bancários mensais, fornecendo relatórios detalhados através de dashboards interativos dos rendimentos e despesas utilizando como entrada extratos bancários de qualquer instituição, mas com o padrão de formato PDF.
 
-### Atividades e Processos de Negócio
+## 3. Atividades e Processos de Negócio
 <div align="center">
 
 <img src="diagrama.png" alt="Alt Text" width="1000"/>
 
 </div>
 
-### Oportunidade de Negócios
+## 4. Oportunidade de Negócios
 Considerando o desafio de integração entre os dados do fluxo bancários em diferentes de instituições financeiras, a pluralidade e maneiras particulares de expor os extratos bancários ao cliente, a nossa aplicação visa estabelecer um canal de análise base, para mesclar e fornecer as principais interações estatísticas através dashboards interativos independente da quantidade extratos bancários fornecidos e de sua instituição de origem.
 
 <div align="center">
 
-## Funcionalidades
-
 </div>
 
+## 5. Funcionalidades
 
 - Leitura de extratos bancários em diversos formatos (PDF).
 - Extração de dados relevantes como despesas, receitas, saldos e categorias de gastos.
 - Geração de relatórios detalhados sobre despesas e rendimentos.
 - Criação de dashboards interativos para visualização e análise dos dados financeiros.
-<div align="center">
 
-## Tecnologias Utilizadas
+## 6. Tecnologias Utilizadas
 
-</div>
-
-- **Linguagem de Programação**: Python, Jupyter Notebook
+- **Linguagem de Programação**: Python
 
 - **Bibliotecas**: Pandas, Matplotlib, Seaborn, Plotly, Dash, loguru, openpyxl, os, tabula, PyPDF2
 
-<div align="center">
-
-## Estrutura do Projeto
-
-</div>
+## 7. Estrutura do Projeto
 
 PROJETO-ESW
 
@@ -110,57 +104,50 @@ PROJETO-ESW
 <div align="center">
 
 # **CICLO DE VIDA DO PROJETO**
-## Planejamento e Definição de Requisitos
 
 </div>
 
-### Objetivo:
+## 1. Planejamento e Definição de Requisitos
+
+### 1.1. Objetivo:
 
 - Entender as necessidades dos usuários e definir os requisitos funcionais e não funcionais do sistema.
 
-### Atividades:
+### 1.2. Atividades:
 
 - Reuniões para levantar requisitos.
 - Definição das funcionalidades principais (leitura de extratos, geração de relatórios, criação de dashboards).
 - Estabelecimento de prazos e cronograma do projeto.
 
-### Resultados:
+### 1.3. Resultados:
 
 - Documento de Requisitos do Software (DRS).
 - Especificação das funcionalidades e tecnologias a serem usadas.
 
-#
-<div align="center">
+## 2. Design do projeto
 
-## Design do projeto
-
-</div>
-
-### Objetivo:
+### 2.1. Objetivo:
 
 - Arquitetar a solução e definir a estrutura do código e da aplicação.
 
-### Atividades:
+### 2.2. Atividades:
 
 - Design da arquitetura do sistema.
 - Definição da estrutura de pastas e módulos.
 - Escolha de bibliotecas e ferramentas.
 
-### Resultados:
+### 2.3. Resultados:
 
 - Diagrama de arquitetura do sistema.
 - Estrutura inicial do projeto (como a organização das pastas e arquivos).
-<div align="center">
 
-# **DESENVOLVIMENTO**
+## 3. Desenvolvimento
 
-</div>
-
-### Objetivo: 
+### 3.1. Objetivo: 
 
 - Implementar as funcionalidades definidas nos requisitos.
 
-### Atividades:
+### 3.22 Atividades:
 
 - **Codificação das funcionalidades principais:**
 
@@ -170,67 +157,57 @@ PROJETO-ESW
 - - Criação de dashboards.
 - - Integração de bibliotecas externas.
 
-### Resultados:
+### 3.3. Resultados:
 
 - Módulos de código prontos (modulo.py e lib_ESW.py).
 - Funcionalidades implementadas e testadas de forma individual.
-<div align="center">
 
-# **TESTES**
+## 4. Testes
 
-</div>
-
-### Objetivo: 
+### 4.1. Objetivo: 
 
 - Garantir que o sistema funciona conforme o esperado e sem erros.
 
-### Atividades:
+### 4.2. Atividades:
 
 - Testes unitários das funções.
 - Testes de integração para garantir que os módulos funcionam juntos.
 - Testes de sistema para verificar a funcionalidade completa.
 
-### Resultados:
+### 4.3. Resultados:
 
 - Relatórios de testes.
 - Correções de bugs identificados.
 
-<div align="center">
+## 5. ImplantaçãoO
 
-# **IMPLANTAÇÃO**
-
-</div>
-
-### Objetivo: 
+### 5.1. Objetivo: 
 
 - Disponibilizar o sistema para os usuários finais.
 
-### Atividades:
+### 5.2. Atividades:
 
 - Preparação do ambiente de execução (Jupyter Notebook, instalação de bibliotecas).
 - Entrega do projeto para avaliação ou uso.
 
-### Resultados:
+### 5.3. Resultados:
 
 - Sistema pronto para uso ou avaliação.
 - Documentação do projeto final.
-<div align="center">
 
-# **MANUTENÇÃO**
+## 6. Manutenção
 
-</div>
-
-### Objetivo: 
+### 6.1. Objetivo: 
 
 - Garantir a longevidade do sistema e fazer melhorias contínuas.
 
-### Atividades:
+### 6.2. Atividades:
 
 - Correções de bugs após a entrega.
 - Atualizações de funcionalidades com base em feedbacks.
 - Adição de novas funcionalidades (opcional).
 
-### Resultados:
+### 6.3. Resultados:
 
 - Versões atualizadas do sistema.
 
@@ -241,7 +218,7 @@ PROJETO-ESW
 
 </div>
 
-### Metodologia de Desenvolvimento
+## Metodologia de Desenvolvimento
 
 - Começar com uma iteração curta para implementar as funcionalidades básicas, como a leitura de extratos e extração de dados.
 - Focar em um protótipo funcional que permita a leitura de diferentes formatos de arquivos e a geração de relatórios simples.
@@ -250,27 +227,29 @@ PROJETO-ESW
 - Desenvolvimento de dashboards interativos.
 - Cada iteração deve incluir a fase de testes e integração dos novos módulos com os existentes.
 
-### Revisões e Feedbacks
+## Revisões e Feedbacks
 
 - Realizar revisões periódicas com o professor ou colegas para obter feedback sobre o progresso.
 - Ajustar o desenvolvimento conforme o feedback recebido para garantir que o sistema atenda às expectativas.
 
-### Entrega Final
+## Entrega Final
 
 - Consolidar todas as funcionalidades desenvolvidas.
 - Realizar testes finais e preparar a documentação do projeto.
 - Entregar o projeto dentro do prazo estabelecido.
+
+#
 <div align="center">
 
 # **DOCUMENTAÇÃO DE REQUISITOS DE SOFTWARE (SRS)**
 
 </div>
 
- ### Introdução
+ ## Introdução
 
  Este documento descreve os requisitos funcionais e não funcionais para o sistema de leitura e processamento de arquivos PDF, extração e categorização de dados financeiros, e geração de relatórios e dashboards interativos.
 
- #### Prioridade dos Requisitos
+ ### Prioridade dos Requisitos
 
 A cada requisito será atribuída uma prioridade. A descrição de cada uma segueabaixo:**
 
@@ -278,9 +257,9 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
  - Importante: é um requisito que deve ser implementado, mas, se não for, o sistema funcionará do mesmo jeito, mas de maneira insatisfatória.
   - Desejável: é um requisito que trará um diferencial adicional ao sistema. Por isso, pode ser deixado para ser implementado por último ou em próximas iterações.
 
- ### Requisitos Funcionais
+ ## Requisitos Funcionais
 
- #### Leitura de arquivos PDF
+ ### Leitura de arquivos PDF
 
 - ❖ Descrição: O sistema deve ser capaz de ler arquivos PDF em diversos formatos e extrair o conteúdo textual e estruturado necessário para análise.
 
@@ -296,7 +275,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
   - ➢ O sistema deve ser capaz de ler e extrair texto de pelo menos 95% dos arquivos PDF fornecidos.
   - ➢ Os istema deve detectar e relatar qualquer falha ao tentar ler um PDF não suportado.
 
- #### Extração e categorização de dados financeiros
+ ### Extração e categorização de dados financeiros
 
 - ❖ Descrição: O sistema deve extrair dados financeiros relevantes dos arquivos PDF ecategorizá-los de acordo com critérios predefinidos.
 
@@ -312,7 +291,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
   - ➢ Os dados extraídos devem corresponder a pelo menos 98% das informações financeiras presentes nos PDFs.
   - ➢ Ascategorias devem estar alinhadas com as categorias predefinidas e ser ajustáveis conforme necessário.
 
- #### Geração de relatórios financeiros detalhados
+ ### Geração de relatórios financeiros detalhados
 
  - ❖ Descrição: O sistema deve gerar relatórios detalhados baseados nos dados financeiros extraídos e categorizados.
 
@@ -328,7 +307,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
    - ➢ Os relatórios devem ser gerados com precisão e devem estar formatados corretamente.
    - ➢ Os istema deve permitir exportação em todos os formatos suportados sem perda de dados.
 
- #### Criação de dashboards interativos
+ ### Criação de dashboards interativos
 
  - ❖ Descrição: O sistema deve criar dashboards interativos que permitam a visualização e análise dos dados financeiros extraídos.
 
@@ -343,123 +322,144 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
    - ➢ Dashboards devem ser responsivos e permitir a interação fluida com os dados.
    - ➢ Os dados exibidos nos dashboards devem estar atualizados e precisos.
+#
 
- ### Requisitos Não Funcionais
-
- #### Desempenho eficiente na leitura e processamento dos arquivos PDF 
-
- - ❖ Descrição: O sistema deve processar arquivos PDF de forma eficiente, sem a especificação de tempo ou tamanho de arquivo.
-
- - ❖ Requisitos:
-
-   - ➢ [NF001] O sistema deve suportar a leitura e processamento simultâneo de múltiplos arquivos PDF.
-
- - ❖ Prioridade: Essencial
-
- - ❖ Critérios de Aceitação:
-
-   - ➢ Os sistema deve manter desempenho consistente sob carga elevada.
-
- #### Interface intuitiva para geração e visualização de relatórios
-
- - ❖ Descrição: O sistema deve ter uma interface de usuário intuitiva que facilite a geração e visualização de relatórios e dashboards.
-
- - ❖ Requisitos:
-
-   - ➢ [NF003] A interface deve ser fácil de usar e navegar.
-   - ➢ [NF004] As funcionalidades principais devem ser acessíveis em no máximo três cliques.
-
- - ❖ Prioridade: Importante
-
- - ❖ Critérios de Aceitação:
-
-   - ➢ Usuários devem ser capazes de gerar e visualizar relatórios e dashboards com facilidade.
-
-   - ➢ Feedback dos usuários deve indicar uma alta taxa de satisfação com a interface.
-
- #### Compatibilidade com ferramentas de visualização de dados como Power BI ou Looker Studio
-
- - ❖ Descrição: O sistema deve ser compatível com ferramentas de visualização de dados como Power BI e Looker Studio.
-
- - ❖ Requisitos:
-
-   - ➢ [NF005] Exportação de dados deve ser compatível com formatos suportados por essas ferramentas.
-   - ➢ [NF006] Deve haver integração ou opções de exportação direta para essas ferramentas.
-
- - ❖ Prioridade: Importante
-
- - ❖ Critérios de Aceitação:
-
-   - ➢ Dados exportados devem ser corretamente importados e visualizados nas ferramentas mencionadas.
-
-   - ➢ Aintegração deve funcionar sem erros significativos. Resumo Financeiro
-
-# Entradas (Receitas)
-
- - ❖ 06/11/2018- Recebimento de ICMS
-
-   - ➢ Valor: R$ 3.372.304,31
-   - ➢ Categoria: 
-   
- - ❖ 06/11/2018- Crédito FPM
-
-   - ➢ Valor: R$ 300.000,00
-   - ➢ Categoria: Receita
-
- - ❖ 06/11/2018- Crédito FPE
-
-   - ➢ Valor: R$ 450.000,00
-   - ➢ Categoria: Receita Saídas (Despesas)
-
- - ❖ 07/11/2018- Pagamento de Fornecedores
-
-   - ➢ Valor: R$ 1.000.000,00
-   - ➢ Categoria: 
-   
- - ❖ 07/11/2018- Transferência para Contas Diversas
-
-   - ➢ Valor: R$ 500.000,00
-   - ➢ Categoria: Diversos
-
- - ❖ 08/11/2018- Pagamento de Folha de Pagamento
-
-   - ➢ Valor: R$ 850.000,00
-   - ➢ Categoria: Salários Saldos
-
- - ● Saldo Inicial em 06/11/2018: R$ 0,00
- - ● Entradas Totais: R$ 4.122.304,31
- - ● Saídas Totais: R$ 2.350.000,00
- - ● Saldo Final em 08/11/2018: R$ 1.772.304,31 Categorias de Gastos
-
- - ❖ Receitas
-
-   - ➢ FPM
-   - ➢ FPE
-   - ➢ ICMS
-
- - ❖ Despesas
-
-   - ➢ Diversos (Pagamento de fornecedores e transferências)
-   - ➢ Salários (Folha de pagamento) Observações
-
- - ● Todas as transações estão datadas de novembro de 2018.
- - ● Asreceitas são principalmente de repasses de ICMS, FPM e FPE.
- - ● Asdespesas incluem pagamentos a fornecedores, transferências diversas, e folha de pagamento.
-
- Este relatório foi gerado com base nos dados disponíveis no extrato. Caso deseje informações mais detalhadas ou alguma modificação, sinta-se à vontade para pedir! Geração de Relatórios Detalhados Objetivo: Fornecer uma visão simples e clara dos valores pagos e recebidos.
 <div align="center">
 
- # **ESTRUTUA DA TABELA**
+# **2° ENTREGA**
 
 </div>
 
-  ### Colunas:
 
- 1. NomedaTransação: Descrição básica (ex.: "Recebimento de ICMS").
- 2. Tipo: Entrada ou Saída.
- 3. Valor: Valor monetário da transação.
- 4. Descrição: Breve descrição do que foi pago ou recebido (opcional).
+ ## Requisitos Não Funcionais
 
 
-======================================================================================================
-# projeto não concluido, ainda em faze de testes.
+                                                +---------------------------------------------------------+     
+                                                | 1. Desempenho na Leitura e Processamento de Arquivos PDF|
+                                                +---------------------------------------------------------+
+                                                              |                                   |                       
+                                                +-----------[NF001]-----------+   +-------------[NF002]-------------+
+                                                |   O sistema deve suportar   |   |   Eficiência sem especificação  |
+                                                | a leitura e processamento   |   | de tempo ou tamanho.            |
+                                                | simultâneo de múltiplos     |   |                                 |
+                                                | arquivos PDF.               |   |                                 |
+                                                +-----------------------------+   +---------------------------------+
+                                                                |       
+                                                +---------------------------------+
+                                                |   Critério: Desempenho          |
+                                                | consistente sob carga elevada.  |
+                                                +---------------------------------+
+#
+
+                                                +-----------------------------------------------------------+
+                                                | 2. Interface Intuitiva para Relatórios e Dashboards       |
+                                                +-----------------------------------------------------------+
+                                                              |                                   |                       
+                                                +-----------[NF003]-----------+   +-------------[NF004]-------------+
+                                                |   A interface deve ser      |   |   Funcionalidades principais    |
+                                                | fácil de usar e navegar.    |   | acessíveis em no máximo três    |
+                                                |                             |   | cliques.                        |
+                                                +-----------------------------+   +---------------------------------+
+                                                              |                                  |
+                                         +------------------------------------+   +------------------------------------+
+                                         |   Critério: Geração e visualização |   |   Critério: Alta satisfação dos    |
+                                         | de relatórios com facilidade.      |   | usuários com a interface.          |
+                                         +------------------------------------+   +------------------------------------+
+#
+
+                                                +---------------------------------------------------------------+
+                                                | 3. Compatibilidade com Ferramentas de Visualização de Dados   |
+                                                +---------------------------------------------------------------+
+                                                              |                                    |
+                                                +-----------[NF005]-----------+   +-------------[NF006]-------------+
+                                                |   Exportação compatível     |   |   Integração ou exportação      |
+                                                | com Power BI, Looker Studio.|   | direta sem erros significativos.|
+                                                |                             |   |                                 |
+                                                +-----------------------------+   +---------------------------------+
+                                                              |                                  |
+                                         +------------------------------------+   +------------------------------------+
+                                         |   Critério: Dados corretamente     |   |   Critério: Funcionamento sem      |
+                                         | importados nas ferramentas.        |   | erros significativos.              |
+                                         +------------------------------------+   +------------------------------------+
+#
+<div align="center">
+
+ # **PLANEJAMENTO DE TESTES**
+
+</div>
+
+
+                                                                      +-------------------------+
+                                                                      |  Planejamento de Testes |
+                                                                      +-------------------------+
+                                                                                  |
+                                                                        +----------+----------+
+                                                                        |                     |
+                                                                    +--v--+         +--------v--+----+      
+                                                                    |Fluxo|         |Tecnologia Usada|
+                                                                    +-----+         +----------------+
+                                                                      |                      |
+                                                                      v                      v
+                                                              +----------------+      +--------------------------+
+                                                              | Identificar    |      | Ferramenta de Automação  |
+                                                              | Requisitos     |      | de Testes                |
+                                                              +----------------+      +--------------------------+
+                                                                        |                       |
+                                                                +-------v----------+   +--------------------+
+                                                                | Definir Critérios|   | Framework de Teste:|
+                                                                | de Aceitação     |   | unittest           |
+                                                                +------------------+   +--------------------+
+                                                                        |                 |
+                                                                +-------v-------+     +---------------------+
+                                                                | Criar Casos   |     | Sistema de Controle |
+                                                                | de Teste      |     | de Versão: GitHub   |
+                                                                +---------------+     +---------------------+
+                                                                        |             
+                                                                +-------v--------+     
+                                                                | Executar Testes|     
+                                                                +----------------+    
+                                                                        |             
+                                                                +-------v-------+
+                                                                | Registrar     |
+                                                                | Resultados    |
+                                                                +---------------+
+                                                                       |
+                                                                +------v---------+
+                                                                |   Resultados   |
+                                                                +----------------+
+                                                                       |
+                                                                +------v----------------------------+
+                                                                | Resultados Esperados vs Reais     |
+                                                                +-----------------------------------+
+                                                                       |
+                                                                +------v----------------------------+
+                                                                | Registro de Defeitos              |
+                                                                +-----------------------------------+
+                                                                       |
+                                                                +------v----------------------------+
+                                                                | Relatório de Execução de Testes   |
+                                                                +-----------------------------------+
+<div align="center">
+
+[Modelo de testes](test_lib.py) 
+
+[Base de teste](lib_ESW.py)
+
+[Logs de testes](logfile.txt)
+
+</div>
+
+#
+<div align="center">
+
+# **INTERFACE COM POWER BI**
+[Click aqui para abrir o DashBoard](https://app.powerbi.com/view?r=eyJrIjoiYTM0ODdlN2UtNzgwMC00NjA2LWEzY2UtZmI0YmRiNWI4OTM2IiwidCI6ImJmN2UwZjYwLTVhMjktNDk4Ny1iNzA5LWYxYWIyODhmNjM4NSJ9)
+## Conectar-se a dados no Power BI – documentação
+
+
+
+A documentação do Power BI fornece informações de especialistas para conectar-se a dados com ferramentas como gateways aplicativos de modelo e atualização de dados.
+
+[Conectar-se a dados no Power BI – documentação](power-bi-connect-data.pdf)
+#
+</div>
