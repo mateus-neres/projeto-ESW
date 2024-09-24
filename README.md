@@ -468,7 +468,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
 [Base de teste](https://github.com/mateus-neres/projeto-ESW/blob/main/test/lib_ESW.py)
 
-[Logs de testes](logfile.txt)
+[Logs de testes](https://github.com/mateus-neres/projeto-ESW/blob/main/logfile.txt)
 
 </div>
 
