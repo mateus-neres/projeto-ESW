@@ -495,6 +495,6 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
 A documentação do Power BI fornece informações de especialistas para conectar-se a dados com ferramentas como gateways aplicativos de modelo e atualização de dados.
 
-[Conectar-se a dados no Power BI – documentação](power-bi-connect-data.pdf)
+[Conectar-se a dados no Power BI – documentação](https://github.com/mateus-neres/projeto-ESW/blob/main/power-bi-connect-data.pdf)
 #
 </div>
