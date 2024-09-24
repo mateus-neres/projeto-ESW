@@ -21,8 +21,6 @@ Valeria Joyse Santos Nunes
 
 John Wesley Da Silva Moreira Pinto
 
-Gabriel dos Santos Lopes
-
 Erick Fernandes De Farias Santos
 
 #

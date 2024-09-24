@@ -1,12 +1,12 @@
 Projeto de Engenharia de Software - Análise de Extratos Bancários
 
 1° ENTREGA:
-	[] Visão de Negócio
-	[] Ciclo de vida do projeto
-	[] Processo de desenvolvimento
-	[] Requisitos de software (SRS)
+	[X] Visão de Negócio
+	[X] Ciclo de vida do projeto
+	[X] Processo de desenvolvimento
+	[X] Requisitos de software (SRS)
 2° ENTREGA:
-	[] Diagrama de requisitos funcionais e não funcionais
-	[] Planejamento de testes
-	[] Documentação de interface com Power Bi
-	[] Modelo de testes
+	[X] Diagrama de requisitos funcionais e não funcionais
+	[X] Planejamento de testes
+	[X] Documentação de interface com Power Bi
+	[X] Modelo de testes
