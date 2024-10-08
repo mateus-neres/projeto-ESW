@@ -5,6 +5,28 @@ import os
 import sys
 import pandas as pd
 from lib_ESW import LibEsw
+from loguru import logger
+import logging
+
+dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+############################### Gerenciamento de  Log ###############################
+class InterceptHandler(logging.Handler):
+    def emit(self, record):
+        logger_opt = logger.opt(depth=6, exception=record.exc_info)
+        logger_opt.log(record.levelname, record.getMessage())
+
+logging.basicConfig(handlers=[InterceptHandler()], level=logging.DEBUG)
+
+log_dir = os.path.join(os.path.dirname(sys.argv[0]), './log_file')
+
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+log_file = os.path.join(log_dir, 'log.txt')
+
+logger.add(log_file, format="{time} {level} {file}:{line} {message}", level="DEBUG")
+#####################################################################################
 
 caminho_pdf = os.getcwd()+"\\test\\test.pdf"
 
