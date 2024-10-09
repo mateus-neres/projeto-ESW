@@ -8,5 +8,5 @@ Projeto de Engenharia de Software - Análise de Extratos Bancários
 2° ENTREGA:
 	[X] Diagrama de requisitos funcionais e não funcionais
 	[X] Planejamento de testes
-	[X] Documentação de interface com Power Bi
 	[X] Modelo de testes
+	[X] Documentação de interface com Power Bi

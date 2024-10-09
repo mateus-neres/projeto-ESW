@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="ufpb_logo.png" alt="Alt Text" width="100"/>
+  <img src="static/ufpb_logo.png" alt="Alt Text" width="100"/>
 
 ### UNIVERSIDADE FEDERAL DA PARAÍBA
 
@@ -53,7 +53,7 @@ Este projeto foi desenvolvido para a disciplina de Engenharia de Software na Uni
 ## Atividades e Processos de Negócio
 <div align="center">
 
-<img src="diagrama.png" alt="Alt Text" width="1000"/>
+<img src="static/diagrama.png" alt="Alt Text" width="1000"/>
 
 </div>
 
@@ -82,25 +82,51 @@ Considerando o desafio de integração entre os dados do fluxo bancários em dif
     PROJETO-ESW
         |
         |
-        ├── modulo
+        ├── modulo - Pasta de arquivos principais
         |   |
         |   |
-        │   ├── modulo.py - Código principal do projeto.
+        |   ├── log_file - Pasta de aramazenamento de logs
+        |   |    |
+        |   |    |
+        |   |    ├── log.txt - Persistencia dos logs de funcionamento do modulo.py
         |   |
-        │   ├── lib_ESW.py - Arquivo contendo funções utilizadas no projeto.
+        |   |
+        |   ├── entregas_proj_ESW.txt - Mapeamento de entregas realizadas ao longo da disciplina
         |   |
         │   ├── extrato.pdf - Base de dados.
         |   |
-        │   ├── extrato.xlsx - Relatórios extraido do pdf para tratamento.
+        │   ├── lib_ESW.py - Arquivo contendo funções utilizadas no projeto.
         |   |
-        │   ├── ExtratoLimpo.xlsx - Relatório para entrega ao cliente e conecção com o Power BI.
+        │   ├── modulo.exe - Aplicativo funcional para execução.
+        |   |
+        |   ├── modulo.py - Código fonte do projeto.
+        |   |
+        │   ├── extrato.xlsx - Relatórios extraido do pdf para tratamento RF[1].
+        |   |
+        │   ├── ExtratoLimpo.xlsx - Relatório para entrega ao cliente e conecção com o Power BI RF[2] e RF[3].
         |   |
         │   ├── logfile.txt - Arquivos Logs para análise de funcionamento do sistema.
         |   |
-        │   ├── DashBoard - Dashboards criados para visualização - integração com power BI. 
-        |        
-        |
+        │   ├── DashBoard - Dashboards criados para visualização - integração com power BI RF[4]. 
+        |   |
+        |   |
+        |   ├── static - Arquiva elementos visuais para o funcionamento do projeto
+        |   |    |
+        |   |    |
+        |   |    ├── diagrama.png
+        |   |    |
+        |   |    ├── power-bi-connect-data.pdf
+        |   |    |
+        |   |    ├── ufpb_logo
+        |   |
+        |   |
         ├── teste
+        |   |
+        |   |
+        |   ├── log_file - Pasta de aramazenamento de logs
+        |   |    |
+        |   |    |
+        |   |    ├── log.txt - Persistencia dos logs de funcionamento do modulo.py
         |   |
         |   |
         |   ├── relatorio_de_teste
@@ -115,6 +141,8 @@ Considerando o desafio de integração entre os dados do fluxo bancários em dif
         |   |   ├── keybd_closed_cb_ce680311.png - Imagem auxiliar utilizada no relatório.
         |   |   |
         |   |   ├── lib_ESW_py.html - exibe as linhas de código e destaca quais partes foram ou não cobertas pelos testes
+        |   |   |
+        |   |   ├── relatorio_de_testes.pdf - Relatorio de teste resumido em PDF
         |   |   |
         |   |   ├── status.json - contém informações sobre a cobertura de teste em formato estruturado.
         |   |   |
@@ -134,17 +162,9 @@ Considerando o desafio de integração entre os dados do fluxo bancários em dif
         | 
         ├── .gitignore - Controle de arquvos compartilhados com o repositório remoto.
         |
-        ├── diagrama.png - Diagram de Ciclo de Vida do Projeto de Engenharia de Software - Análise de Extratos Bancários
-        |
-        ├── entregas_proj_ESW.txt - Controle de Entrega do Projeto de Engenharia de Software - Análise de Extratos Bancários
-        |
         ├── LICENSE - Licença de uso do GitHub
-        |
-        ├── power-bi-connect-data.pdf - Documentação de conecção do sistema Análise de Extratos Bancários com o Power BI
-        |
-        ├── logfile.txt - Arquivos Logs para análise de funcionamento do teste unitario do sistema.
-        |
-        ├── ufpb_logo.png - Logo da Universidade Federal da Paraíba
+
+
 
 # 
 <div align="center">
@@ -306,7 +326,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
  ## Requisitos Funcionais
 
             +-----------------------------------------------------------+
-            | 1. Leitura e Extração de Arquivos PDF                     |
+            | RF[1]. Leitura e Extração de Arquivos PDF                 |
             +-----------------------------------------------------------+
                           |                                   |                       
             +-----------[RF001]-----------+   +-------------[RF002]-------------+
@@ -321,7 +341,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
             +--------------------------------------------------------------+
 #
             +-----------------------------------------------------------+
-            | 2. Extração e Categorização de Dados Financeiros          |
+            | RF[2]. Extração e Categorização de Dados Financeiros      |
             +-----------------------------------------------------------+
                           |                                   |                       
             +-----------[RF003]-----------+   +-------------[RF004]-------------+
@@ -336,7 +356,7 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
             +--------------------------------------------------------------+
 #
             +-----------------------------------------------------------+
-            | 3. Geração de Relatórios Financeiros Detalhados           |
+            | RF[3]. Geração de Relatórios Financeiros Detalhados       |
             +-----------------------------------------------------------+
                           |                                   |                       
             +-----------[RF005]-----------+   +-------------[RF006]-------------+
@@ -350,9 +370,9 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
             |   corretamente exportados sem perda de dados.                |
             +--------------------------------------------------------------+
 #
-            +-----------------------------------------------------------+
-            | 4. Criação de Dashboards Interativos                      |
-            +-----------------------------------------------------------+
+            +---------------------------------------------------------------+
+            | RF[4]. Criação de Dashboards Interativos                      |
+            +---------------------------------------------------------------+
                           |                                   |                       
             +-----------[RF007]-----------+   +-------------[RF008]-------------+
             |   Dashboards com gráficos   |   |   Atualização automática dos    |
@@ -368,9 +388,9 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
  ## Requisitos Não Funcionais
 
-            +---------------------------------------------------------+     
-            | 1. Desempenho na Leitura e Processamento de Arquivos PDF|
-            +---------------------------------------------------------+
+            +--------------------------------------------------------------+     
+            | RNF[1]. Desempenho na Leitura e Processamento de Arquivos PDF|
+            +--------------------------------------------------------------+
                           |                                   |                       
             +-----------[NF001]-----------+   +-------------[NF002]-------------+
             |   O sistema deve suportar   |   |   Eficiência sem especificação  |
@@ -384,9 +404,9 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
             | consistente sob carga elevada.  |
             +---------------------------------+
 #
-            +-----------------------------------------------------------+
-            | 2. Interface Intuitiva para Relatórios e Dashboards       |
-            +-----------------------------------------------------------+
+            +----------------------------------------------------------------+
+            | RNF[2]. Interface Intuitiva para Relatórios e Dashboards       |
+            +----------------------------------------------------------------+
                           |                                   |                       
             +-----------[NF003]-----------+   +-------------[NF004]-------------+
             |   A interface deve ser      |   |   Funcionalidades principais    |
@@ -400,9 +420,9 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
       +------------------------------------+   +------------------------------------+
   #
 
-            +---------------------------------------------------------------+
-            | 3. Compatibilidade com Ferramentas de Visualização de Dados   |
-            +---------------------------------------------------------------+
+            +--------------------------------------------------------------------+
+            | RNF[3]. Compatibilidade com Ferramentas de Visualização de Dados   |
+            +--------------------------------------------------------------------+
                           |                                    |
             +-----------[NF005]-----------+   +-------------[NF006]-------------+
             |   Exportação compatível     |   |   Integração ou exportação      |
@@ -426,8 +446,8 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
               |  Planejamento de Testes |
               +-------------------------+
                           |
-                +----------+----------+
-                |                     |
+               +----------+----------+
+               |                     |
             +--v--+         +--------v--+----+      
             |Fluxo|         |Tecnologia Usada|
             +-----+         +----------------+
@@ -475,13 +495,13 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
 <div align="center">
 
-[Click aqui para ver o relatório de Testes 📊](http://127.0.0.1:5500/teste/relatorio_de_teste/index.html)
+[Click aqui para ver o relatório de Testes 📊](teste/relatorio_de_teste/relatorio_de_testes.pdf)
 
-[Click aqui para ver o modelo de testes 💻](https://github.com/mateus-neres/projeto-ESW/blob/main/test/test_lib.py) 
+[Click aqui para ver o modelo de testes 💻](teste/lib_ESW.py) 
 
-[Click aqui para ver a base de teste 📋](https://github.com/mateus-neres/projeto-ESW/blob/main/test/lib_ESW.py)
+[Click aqui para ver a base de teste 📋](teste/lib_ESW.py)
 
-[Click aqui para ver o logs de testes 📄](https://github.com/mateus-neres/projeto-ESW/blob/main/logfile.txt)
+[Click aqui para ver o logs de testes 📄](teste/log_file/log.txt)
 
 #
 
@@ -493,6 +513,6 @@ A cada requisito será atribuída uma prioridade. A descrição de cada uma segu
 
 A documentação do Power BI fornece informações de especialistas para conectar-se a dados com ferramentas como gateways aplicativos de modelo e atualização de dados.
 
-[Conectar-se a dados no Power BI – documentação](https://github.com/mateus-neres/projeto-ESW/blob/main/power-bi-connect-data.pdf)
+[Conectar-se a dados no Power BI – documentação](static/power-bi-connect-data.pdf)
 #
 </div>

@@ -1,5 +1,5 @@
 from loguru import logger
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 import os
 import sys
 import tabula
@@ -7,20 +7,27 @@ import PyPDF2
 import pandas as pd
 import numpy as np
 
+# Defina o caminho do JAR
+tabula_jar_path = os.path.join(os.path.dirname(sys.argv[0]), 'tabula', 'tabula-1.0.5-jar-with-dependencies.jar')
+tabula.environment_info.JAR_PATH = tabula_jar_path
+
 # Definindo o diretório atual
 os.chdir(os.path.dirname(__file__))
+
 dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
 
-# Configuração de logs
-logger.add('logfile.txt', format="{time} {level} {file} {message}", level="INFO")
+def caminho_absoluto_arquivo(nome_arquivo):
+    diretorio_script = os.path.dirname(sys.argv[0])
+    caminho_absoluto = os.path.join(diretorio_script, nome_arquivo)
+    return caminho_absoluto
 
 # Função para extrair tabelas de um PDF
 def pdf_para_tabela(arquivo_pdf):
     logger.info('Iniciando a conversão do PDF para tabelas.')
-    caminho_absoluto = os.path.join(dir_atual, arquivo_pdf)
+
     
     try:
-        tabelas = tabula.read_pdf(caminho_absoluto, pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
+        tabelas = tabula.read_pdf(caminho_absoluto_arquivo(arquivo_pdf), pages='all', stream=True, multiple_tables=True, encoding='ISO-8859-1')
         
         if not tabelas:
             logger.warning('Nenhuma tabela foi extraída do PDF.')
@@ -36,25 +43,32 @@ def pdf_para_tabela(arquivo_pdf):
 # Função para salvar tabelas em um arquivo Excel
 def tabela_para_excel(tabelas, arquivo_excel):
     logger.info('Iniciando a conversão das tabelas para arquivo Excel.')
-    caminho_absoluto = os.path.join(dir_atual, arquivo_excel)
-    
+
     try:
         if not tabelas:
             logger.warning('Nenhuma tabela foi fornecida.')
             return
-        
-        workbook = Workbook()
-        sheet = workbook.active
-        
+
+        # Verifica se o arquivo já existe; se não, cria um novo arquivo Excel
+        if os.path.exists(caminho_absoluto_arquivo(arquivo_excel)):
+            workbook = load_workbook(caminho_absoluto_arquivo(arquivo_excel))
+            sheet = workbook.active
+            logger.info('Arquivo Excel existente carregado.')
+        else:
+            workbook = Workbook()
+            sheet = workbook.active
+            logger.info('Novo arquivo Excel criado.')
+
+        # Insere as tabelas no Excel
         for tabela in tabelas:
             for linha in tabela.values.tolist():
                 if linha:
                     sheet.append(linha)
                 else:
                     logger.warning('Linha vazia encontrada e ignorada.')
-        
-        workbook.save(caminho_absoluto)
-        logger.info(f'Arquivo Excel salvo com sucesso em: {caminho_absoluto}')
+
+        workbook.save(caminho_absoluto_arquivo(arquivo_excel))
+        logger.info(f'Arquivo Excel salvo com sucesso em: {caminho_absoluto_arquivo(arquivo_excel)}')
     
     except Exception as e:
         logger.error(f'Erro ao salvar a tabela como Excel: {e}')
@@ -62,10 +76,9 @@ def tabela_para_excel(tabelas, arquivo_excel):
 # Função para extrair texto de um PDF
 def ler_pdf(arquivo_pdf):
     logger.info('Iniciando a leitura do PDF.')
-    caminho_absoluto = os.path.join(dir_atual, arquivo_pdf)
-    
+   
     try:
-        with open(caminho_absoluto, 'rb') as arquivo:
+        with open(caminho_absoluto_arquivo(arquivo_pdf), 'rb') as arquivo:
             leitor_pdf = PyPDF2.PdfReader(arquivo)
             texto = ''
             
@@ -78,19 +91,6 @@ def ler_pdf(arquivo_pdf):
     except Exception as e:
         logger.error(f'Erro ao ler o PDF: {e}')
         return None
-
-# Função para criar um arquivo de texto
-def criar_txt(conteudo, arquivo_txt):
-    logger.info('Iniciando a criação do arquivo de texto.')
-    caminho_absoluto = os.path.join(dir_atual, arquivo_txt)
-    
-    try:
-        with open(caminho_absoluto, 'w', encoding='utf-8') as arquivo:
-            arquivo.write(conteudo)
-        logger.info(f'Conteúdo escrito com sucesso no arquivo: {caminho_absoluto}')
-    
-    except Exception as e:
-        logger.error(f'Erro ao criar o arquivo de texto: {e}')
 
 # Função para ajustar valores monetários
 def ajustar_valor(valor):
@@ -115,4 +115,3 @@ def ajustar_valor(valor):
     except ValueError:
         logger.error(f'Valor inválido para conversão: {valor_str}')
         return None
-
