@@ -1,11 +1,10 @@
-from lib_ESW import tabela_para_excel, pdf_para_tabela, ajustar_valor
+from lib_ESW import tabela_para_excel, pdf_para_tabela, ajustar_valor, caminho_absoluto_arquivo
+from openpyxl import Workbook, load_workbook
 from loguru import logger
 import logging
-import os,sys
+import os
 import pandas as pd
 import numpy as np
-
-dir_atual = os.path.dirname(os.path.abspath(sys.argv[0]))
 
 ############################### Gerenciamento de  Log ###############################
 class InterceptHandler(logging.Handler):
@@ -15,27 +14,23 @@ class InterceptHandler(logging.Handler):
 
 logging.basicConfig(handlers=[InterceptHandler()], level=logging.DEBUG)
 
-log_dir = os.path.join(os.path.dirname(sys.argv[0]), './log_file')
+if not os.path.exists(caminho_absoluto_arquivo('./log_file')):
+    os.makedirs(caminho_absoluto_arquivo('./log_file'))
 
-if not os.path.exists(log_dir):
-    os.makedirs(log_dir)
-
-log_file = os.path.join(log_dir, 'log.txt')
+log_file = os.path.join(caminho_absoluto_arquivo('./log_file'), 'log.txt')
 
 logger.add(log_file, format="{time} {level} {file}:{line} {message}", level="DEBUG")
 #####################################################################################
 
 try:
     # Extraindo dados do PDF e convertendo para Excel
-    caminho_absoluto = os.path.join(dir_atual, 'extrato.pdf')
-    tabelas = pdf_para_tabela(caminho_absoluto)
+
+    tabelas = pdf_para_tabela(caminho_absoluto_arquivo('extrato.pdf'))
     if tabelas is not None:
-        caminho_absoluto = os.path.join(dir_atual, 'extrato.xlsx')
-        tabela_para_excel(tabelas, caminho_absoluto)
+        tabela_para_excel(tabelas, caminho_absoluto_arquivo('extrato.xlsx'))
     
     # Carregar DataFrame
-    caminho_absoluto = os.path.join(dir_atual, 'extrato.xlsx')
-    df = pd.read_excel(caminho_absoluto)
+    df = pd.read_excel(caminho_absoluto_arquivo('extrato.xlsx'), engine='openpyxl')
 
     # Renomear colunas de acordo com os nomes corretos
     df = df.rename(columns={
@@ -71,9 +66,9 @@ try:
 
 
     # Salvar o DataFrame limpo em um novo arquivo Excel
-    caminho_absoluto = os.path.join(dir_atual, "ExtratoLimpo.xlsx")
-    df_cleaned.to_excel(caminho_absoluto, index=False)
-    logger.info(f'Arquivo Excel limpo salvo com sucesso em: {caminho_absoluto}')
+
+    df_cleaned.to_excel(caminho_absoluto_arquivo("ExtratoLimpo.xlsx"), index=False)
+    logger.info(f'Arquivo Excel limpo salvo com sucesso em: {caminho_absoluto_arquivo("ExtratoLimpo.xlsx")}')
 
 except Exception as e:
     logger.error(f'Erro ao executar o código principal: {e}')
