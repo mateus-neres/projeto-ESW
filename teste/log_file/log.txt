@@ -1,11 +1,11 @@
-2024-10-08T20:00:15.564531-0300 INFO lib_ESW.py:119 Valor ajustado: 1234.56
-2024-10-08T20:00:15.567629-0300 INFO lib_ESW.py:119 Valor ajustado: -1234.56
-2024-10-08T20:00:15.568639-0300 INFO lib_ESW.py:119 Valor ajustado: 1234.56
-2024-10-08T20:00:15.568639-0300 ERROR lib_ESW.py:122 Valor inválido para conversão: invalid
-2024-10-08T20:00:15.570148-0300 INFO lib_ESW.py:102 Valor é NaN, retornando None.
-2024-10-08T20:00:15.573352-0300 INFO lib_ESW.py:87 Iniciando a criação do arquivo de texto.
-2024-10-08T20:00:15.574613-0300 INFO lib_ESW.py:92 Conteúdo escrito com sucesso no arquivo: test.txt
-2024-10-08T20:00:15.577073-0300 INFO lib_ESW.py:22 Iniciando a conversão do PDF para tabelas.
-2024-10-08T20:00:15.578083-0300 INFO lib_ESW.py:31 Conversão do PDF para tabelas concluída com sucesso.
-2024-10-08T20:00:15.599094-0300 INFO lib_ESW.py:42 Iniciando a conversão das tabelas para arquivo Excel.
-2024-10-08T20:00:15.602109-0300 INFO lib_ESW.py:62 Arquivo Excel salvo com sucesso em: c:\Users\mateu\Área de Trabalho\AMBIENTE DE TRABALHO\ESTUDOS\UFPB\P4\ENGENHARIA DE SOFTWARE\projeto-ESW\teste\test.xlsx
+2024-10-08T21:53:30.025120-0300 INFO lib_ESW.py:119 Valor ajustado: 1234.56
+2024-10-08T21:53:30.034131-0300 INFO lib_ESW.py:119 Valor ajustado: -1234.56
+2024-10-08T21:53:30.034131-0300 INFO lib_ESW.py:119 Valor ajustado: 1234.56
+2024-10-08T21:53:30.034131-0300 ERROR lib_ESW.py:122 Valor inválido para conversão: invalid
+2024-10-08T21:53:30.034131-0300 INFO lib_ESW.py:102 Valor é NaN, retornando None.
+2024-10-08T21:53:30.034131-0300 INFO lib_ESW.py:87 Iniciando a criação do arquivo de texto.
+2024-10-08T21:53:30.038459-0300 INFO lib_ESW.py:92 Conteúdo escrito com sucesso no arquivo: test.txt
+2024-10-08T21:53:30.040407-0300 INFO lib_ESW.py:22 Iniciando a conversão do PDF para tabelas.
+2024-10-08T21:53:30.040407-0300 INFO lib_ESW.py:31 Conversão do PDF para tabelas concluída com sucesso.
+2024-10-08T21:53:30.042662-0300 INFO lib_ESW.py:42 Iniciando a conversão das tabelas para arquivo Excel.
+2024-10-08T21:53:30.045858-0300 INFO lib_ESW.py:62 Arquivo Excel salvo com sucesso em: c:\Users\mateu\Área de Trabalho\AMBIENTE DE TRABALHO\ESTUDOS\UFPB\P4\ENGENHARIA DE SOFTWARE\projeto-ESW\teste\test.xlsx
